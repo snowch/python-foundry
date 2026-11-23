@@ -27,7 +27,13 @@ jobs:
       - run: npm test
       - run: node tests/wasm-course.mjs
       - run: python tests/exports.py
-      - run: npx playwright install --with-deps chromium
+      - name: Use the hosted runner browser when available
+        run: |
+          if command -v google-chrome > /dev/null; then
+            printf 'CHROMIUM_PATH=%s\n' "$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            npx playwright install --with-deps chromium
+          fi
       - run: npm run test:browser
       - uses: actions/upload-artifact@v4
         if: always()
