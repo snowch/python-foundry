@@ -1,0 +1,17 @@
+import {EditorState,Compartment} from '@codemirror/state';
+import {EditorView,keymap,lineNumbers,highlightActiveLineGutter,Decoration,ViewPlugin} from '@codemirror/view';
+import {defaultKeymap,history,historyKeymap,indentWithTab} from '@codemirror/commands';
+import {python} from '@codemirror/lang-python';
+import {syntaxHighlighting,HighlightStyle,bracketMatching,indentOnInput} from '@codemirror/language';
+import {tags} from '@lezer/highlight';
+const theme=EditorView.theme({'&':{color:'#e5eeea',backgroundColor:'#0f211b',fontSize:'17px'},'.cm-content':{fontFamily:'IBM Plex Mono,monospace',padding:'12px 0',caretColor:'#a4dfc9'},'.cm-line':{padding:'0 12px'},'.cm-gutters':{backgroundColor:'#173128',color:'#a2bdb0',border:'none'},'.cm-scroller':{overflow:'auto',fontFamily:'IBM Plex Mono,monospace',lineHeight:'1.65'},'&.cm-focused':{outline:'2px solid #a4dfc9',outlineOffset:'2px'},'.cm-selectionBackground, &.cm-focused .cm-selectionBackground':{background:'#375d4d'},'.cm-cursor':{borderLeftColor:'#a4dfc9'}},{dark:true});
+const highlight=HighlightStyle.define([{tag:tags.keyword,color:'#d9adf1'},{tag:[tags.string,tags.number,tags.bool,tags.null],color:'#efd598'},{tag:tags.comment,color:'#a5b8b0'},{tag:tags.function(tags.variableName),color:'#a9d8ee'},{tag:tags.operator,color:'#c1dacc'}]);
+export function createEditor(parent,{label,value='',change,run,focusPatterns=[]}){
+ const readOnly=new Compartment();let patterns=focusPatterns;
+ function marks(view){const ranges=[];for(const pattern of patterns){if(!pattern)continue;const start=view.state.doc.toString().indexOf(pattern);if(start>=0)ranges.push(Decoration.mark({class:'cm-lesson-focus'}).range(start,start+pattern.length));}ranges.sort((a,b)=>a.from-b.from);const unique=ranges.filter((range,index)=>!index||range.from>=ranges[index-1].to);return Decoration.set(unique);}
+ const focus=ViewPlugin.fromClass(class{constructor(view){this.decorations=marks(view);}update(update){if(update.docChanged||update.transactions.some(t=>t.reconfigured))this.decorations=marks(update.view);}},{decorations:value=>value.decorations});
+ function fit(view){view.dom.style.height=Math.min(420,Math.max(140,view.state.doc.lines*28+34))+'px';}
+ const extensions=[lineNumbers(),highlightActiveLineGutter(),history(),keymap.of([{key:'Mod-Enter',run:()=>{run();return true;}},{key:'Escape',run:view=>{view.contentDOM.blur();return true;}},...defaultKeymap,...historyKeymap,indentWithTab]),python(),syntaxHighlighting(highlight),bracketMatching(),indentOnInput(),theme,focus,readOnly.of(EditorState.readOnly.of(false)),EditorView.contentAttributes.of({'aria-label':label,'spellcheck':'false','autocapitalize':'off'}),EditorView.updateListener.of(update=>{if(update.docChanged){fit(update.view);change(update.state.doc.toString());}})];
+ const view=new EditorView({parent,state:EditorState.create({doc:value,extensions})});fit(view);
+ return {get value(){return view.state.doc.toString();},setValue(value,nextPatterns=patterns){patterns=nextPatterns;view.setState(EditorState.create({doc:value,extensions}));fit(view);},setReadOnly(value){view.dispatch({effects:readOnly.reconfigure(EditorState.readOnly.of(value))});},focus(){view.focus();},showFocus(){const text=view.state.doc.toString(),start=patterns.map(p=>text.indexOf(p)).find(i=>i>=0);if(start!==undefined){view.dispatch({selection:{anchor:start},effects:EditorView.scrollIntoView(start,{y:'center'})});view.focus();}},destroy(){view.destroy();},view};
+}

@@ -1,0 +1,31 @@
+import {cp,mkdir,readFile,writeFile,rm} from 'node:fs/promises';
+import {execFileSync} from 'node:child_process';
+import {build} from 'esbuild';
+import {buildOffline} from './offline.mjs';
+import {zipFiles} from '../web/archive.js';
+const target='dist';
+await rm(target,{recursive:true,force:true});await mkdir(target+'/runtime',{recursive:true});await mkdir(target+'/downloads',{recursive:true});
+await mkdir('.cache',{recursive:true});
+execFileSync('python',['tests/native-course.py','--catalog','.cache/verified-course.json'],{stdio:'pipe',maxBuffer:8e6});
+const course=JSON.parse(await readFile('.cache/verified-course.json','utf8'));
+await cp('web',target,{recursive:true});
+await cp('content/kernel.py',target+'/kernel.py');
+await cp('content/tinydb.py',target+'/tinydb.py');
+for(const name of ['pyodide.mjs','pyodide.asm.mjs','pyodide.asm.wasm','python_stdlib.zip','pyodide-lock.json'])await cp('node_modules/pyodide/'+name,target+'/runtime/'+name);
+await cp('licenses',target+'/licenses',{recursive:true});
+await writeFile(target+'/course.js','export const modules='+JSON.stringify(course.modules)+';\nexport const lessons='+JSON.stringify(course.lessons)+';\n');
+await build({entryPoints:['src/editor.js'],outfile:target+'/editor.mjs',bundle:true,format:'esm',target:'es2022',minify:true,legalComments:'eof'});
+const encoder=new TextEncoder(),all=[];
+for(const lesson of course.lessons){
+ const files=[...Object.entries(lesson.files),...Object.entries(lesson.fixtures)];
+ const portable=source=>lesson.async_code?source.replace(/await main\(\)\s*$/,'asyncio.run(main())\n'):source;
+ const readme='# '+lesson.title+'\n\n'+lesson.goal+'\n\nRun with Python 3.14:\n\n    python '+lesson.entry+' '+lesson.args.join(' ')+'\n\n'+(lesson.stdin?'Program input (one value per line):\n\n'+lesson.stdin+'\n':'')+lesson.explain.join('\n\n')+'\n\nPractice:\n'+lesson.practice+'\n';
+ const archive=zipFiles([...files.map(([name,text])=>[name,encoder.encode(name===lesson.entry?portable(text):text)]),['README.md',encoder.encode(readme)]]);
+ await writeFile(target+'/downloads/'+lesson.id+'.zip',archive);
+ all.push(...files.map(([name,text])=>[lesson.id+'/'+name,encoder.encode(name===lesson.entry?portable(text):text)]),[lesson.id+'/README.md',encoder.encode(readme)]);
+}
+await writeFile(target+'/downloads/python-foundry-course.zip',zipFiles(all));
+await cp('THIRD_PARTY.md',target+'/notices.txt');
+const commit=process.env.COURSE_COMMIT||execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();
+const release=await buildOffline(target,{commit,date:new Date().toISOString().slice(0,10)});
+console.log(`Built ${course.lessons.length} lessons, ${course.modules.length} chapters, real Python ${JSON.parse(await readFile('node_modules/pyodide/pyodide-lock.json')).info.python}, ${(release.bytes/1e6).toFixed(1)} MB verified offline copy.`);
