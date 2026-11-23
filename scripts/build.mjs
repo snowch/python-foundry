@@ -1,4 +1,4 @@
-import {cp,mkdir,readFile,writeFile,rm} from 'node:fs/promises';
+import {cp,mkdir,readFile,readdir,writeFile,rm} from 'node:fs/promises';
 import {execFileSync} from 'node:child_process';
 import {build} from 'esbuild';
 import {buildOffline} from './offline.mjs';
@@ -13,8 +13,18 @@ await cp('content/kernel.py',target+'/kernel.py');
 await cp('content/tinydb.py',target+'/tinydb.py');
 for(const name of ['pyodide.mjs','pyodide.asm.mjs','pyodide.asm.wasm','python_stdlib.zip','pyodide-lock.json'])await cp('node_modules/pyodide/'+name,target+'/runtime/'+name);
 await cp('licenses',target+'/licenses',{recursive:true});
+await cp('LICENSE',target+'/licenses/python-foundry.txt');
+const lock=JSON.parse(await readFile('package-lock.json','utf8')),editorNotices=[];
+for(const [directory,metadata] of Object.entries(lock.packages)){
+ if(!directory||metadata.dev||directory==='node_modules/pyodide')continue;
+ const name=(await readdir(directory)).find(name=>/^licen[cs]e(?:\.(?:md|txt))?$/i.test(name));
+ if(!name)throw Error('Missing dependency licence: '+directory);
+ editorNotices.push(directory.replace('node_modules/','')+' '+metadata.version+'\n\n'+await readFile(directory+'/'+name,'utf8'));
+}
+const editorLicence=editorNotices.join('\n\n');
+await writeFile(target+'/licenses/editor.txt',editorLicence);
 await writeFile(target+'/course.js','export const modules='+JSON.stringify(course.modules)+';\nexport const lessons='+JSON.stringify(course.lessons)+';\n');
-await build({entryPoints:['src/editor.js'],outfile:target+'/editor.mjs',bundle:true,format:'esm',target:'es2022',minify:true,legalComments:'eof'});
+await build({entryPoints:['src/editor.js'],outfile:target+'/editor.mjs',bundle:true,format:'esm',target:'es2022',minify:true,legalComments:'eof',banner:{js:'/*! Bundled dependency licences\n'+editorLicence+'\n*/'}});
 const encoder=new TextEncoder(),all=[];
 for(const lesson of course.lessons){
  const files=[...Object.entries(lesson.files),...Object.entries(lesson.fixtures)];
