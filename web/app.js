@@ -20,7 +20,28 @@ const practiceEditor=createEditor($('practice-editor'),{label:'Practice Python c
 function safeFiles(saved,fallback){if(!saved||typeof saved!=='object')return clone(fallback);const result={};for(const[name,value]of Object.entries(fallback))result[name]=typeof saved[name]==='string'?saved[name]:value;return result;}
 function setBusy(value){busy=value;const locked=value||runnerBusy()||databaseWorkspace?.busy;editor.setReadOnly(locked);practiceEditor.setReadOnly(locked);for(const id of ['run','check-practice','reset','reset-practice','undo-reset','undo-practice','show-focus'])$(id).disabled=locked;$('program-input').readOnly=locked;$('program-args').readOnly=locked;document.querySelectorAll('#file-tabs button').forEach(button=>button.disabled=locked);$('stop').hidden=!value||runningMode!=='worked';$('stop-practice').hidden=!value||runningMode!=='practice';}
 const labDone=id=>read(id+'/done')==='true';
-const labGroups=modules.map((m,i)=>({...m,number:i+1,href:'?lab='+m.id,summary:byId.get(m.lessons[0]).goal,requirement:i?'Builds on '+modules[i-1].title+'.':'No previous programming experience required.',lessons:m.lessons.map(id=>({...byId.get(id),href:'?lesson='+id}))}));
+const labSummaries={
+ first:'Print messages, name values, calculate results and read keyboard input.',
+ control:'Choose branches, repeat instructions and control when loops stop.',
+ collections:'Store related values in lists, tuples, dictionaries and sets.',
+ iteration:'Traverse, combine, transform and sort collections.',
+ functions:'Define functions with arguments, return values, clear boundaries and recursion.',
+ 'text-data':'Turn text into fields, Unicode bytes, CSV rows and JSON values.',
+ files:'Read and write files, handle missing paths, and use dates and exact decimal values.',
+ reliability:'Interpret tracebacks, handle errors and test behaviour with assertions and unittest.',
+ modules:'Organise source modules, command-line arguments, environments and project metadata.',
+ objects:'Model state and behaviour using classes, dataclasses, composition and protocols.',
+ 'language-patterns':'Use inheritance, special methods, unpacking, comprehensions and pattern matching.',
+ deeper:'Follow references and copies, then build iterators, generators, decorators and context managers.',
+ applications:'Use logging, configuration, SQL parameters, transactions and test doubles.',
+ 'async-performance':'Coordinate asynchronous work and measure costs, timings and cache reuse.',
+ projects:'Combine earlier skills in six applications using text, files, SQLite and async work.',
+ 'dsa-search-sort':'Measure work and implement linear search, binary search, sorting and two-pointer scans.',
+ 'dsa-structures':'Implement stacks, queues, linked lists, hash tables, heaps and search trees.',
+ 'dsa-graphs':'Represent graphs, traverse them, find paths and reuse subproblem results.',
+ 'tinydb-index':'Define database rows, encode values and build a B+ index with range lookup.',
+ 'tinydb-storage':'Save snapshots, commit transactions, replay a journal and recover persistent data.'};
+const labGroups=modules.map((m,i)=>({...m,number:i+1,href:'?lab='+m.id,summary:labSummaries[m.id],requirement:i?'Builds on '+modules[i-1].title+'.':'No previous programming experience required.',lessons:m.lessons.map(id=>({...byId.get(id),href:'?lesson='+id}))}));
 let activeLab;
 function brandLab(group){const brand=document.querySelector('.brand');brand.href=group?group.href:'./';brand.lastElementChild.firstChild.textContent='Python Foundry';brand.querySelector('small').textContent=group?group.title:'Python 3.14 · Learn in your browser';}
 function hubView(){const params=new URL(location.href).searchParams,group=labGroups.find(g=>g.id===params.get('lab')),id=params.get('lesson');if(id){activeLab=labGroups.find(g=>g.lessons.some(l=>l.id===id));brandLab(activeLab);return;}activeLab=group;brandLab(group);$('course-navigation-home').hidden=true;$('lab-hub').hidden=false;$('lab-hub').innerHTML=group?foundryHub.overview(group,labDone,read('hub:last-lesson'),'./'):'<div class="hub-heading"><h2>Choose a lab</h2><p>'+labGroups.filter(g=>g.lessons.every(l=>labDone(l.id))).length+' / '+labGroups.length+' labs complete</p></div><div class="foundry-lab-grid">'+foundryHub.cards(labGroups,labDone)+'</div>';document.title=group?group.title+' · Python Foundry':'Python Foundry';$('home').hidden=!!group;
