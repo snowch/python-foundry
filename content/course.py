@@ -427,7 +427,7 @@ def test_double():
 
 suite = unittest.TestSuite([unittest.FunctionTestCase(test_double)])
 result = unittest.TextTestRunner(verbosity=0).run(suite)
-print("passed", result.wasSuccessful())''','return value * 2','return value + 2','passed True\n','passed False\n','Find passed in Console and inspect Test messages. Which assertion detects the edited implementation?','Use unittest.FunctionTestCase to check that len([1, 2]) is 2. Print result.wasSuccessful().','import unittest\n\ndef test_length():\n    assert len([1, 2]) == 2\n\nsuite = unittest.TestSuite([unittest.FunctionTestCase(test_length)])\nresult = unittest.TextTestRunner(verbosity=0).run(suite)\nprint(result.wasSuccessful())','The suite provides a repeatable check and a separate success value.',refs=[('unittest','https://docs.python.org/3/library/unittest.html')])
+print("passed", result.wasSuccessful())''','return value * 2','return value + 2','passed True\n','passed False\n','Find passed in Console and open Test and diagnostic messages. Which assertion detects the edited implementation?','Use unittest.FunctionTestCase to check that len([1, 2]) is 2. Print result.wasSuccessful().','import unittest\n\ndef test_length():\n    assert len([1, 2]) == 2\n\nsuite = unittest.TestSuite([unittest.FunctionTestCase(test_length)])\nresult = unittest.TextTestRunner(verbosity=0).run(suite)\nprint(result.wasSuccessful())','The suite provides a repeatable check and a separate success value.',refs=[('unittest','https://docs.python.org/3/library/unittest.html')])
 
 module('modules','Organise and run a project','Split code into files and distinguish browser work from desktop tools.')
 lesson('local-modules','Import your own module','Edit a helper file and rerun the importing program.',[
