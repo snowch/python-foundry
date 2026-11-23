@@ -1,3 +1,4 @@
+import './lab-hub.js';
 import {mountTinyDB} from './tinydb-workspace.mjs';
 import {renderConcept} from './diagrams.mjs';
 import {lessons,modules} from './course.js';
@@ -18,6 +19,36 @@ const editor=createEditor($('source-editor'),{label:'Editable Python code',chang
 const practiceEditor=createEditor($('practice-editor'),{label:'Practice Python code',change:practiceChanged,run:()=>run('practice')});
 function safeFiles(saved,fallback){if(!saved||typeof saved!=='object')return clone(fallback);const result={};for(const[name,value]of Object.entries(fallback))result[name]=typeof saved[name]==='string'?saved[name]:value;return result;}
 function setBusy(value){busy=value;const locked=value||runnerBusy()||databaseWorkspace?.busy;editor.setReadOnly(locked);practiceEditor.setReadOnly(locked);for(const id of ['run','check-practice','reset','reset-practice','undo-reset','undo-practice','show-focus'])$(id).disabled=locked;$('program-input').readOnly=locked;$('program-args').readOnly=locked;document.querySelectorAll('#file-tabs button').forEach(button=>button.disabled=locked);$('stop').hidden=!value||runningMode!=='worked';$('stop-practice').hidden=!value||runningMode!=='practice';}
+const labDone=id=>read(id+'/done')==='true';
+const labSummaries={
+ first:'Print messages, name values, calculate results and read keyboard input.',
+ control:'Choose branches, repeat instructions and control when loops stop.',
+ collections:'Store related values in lists, tuples, dictionaries and sets.',
+ iteration:'Traverse, combine, transform and sort collections.',
+ functions:'Define functions with arguments, return values, clear boundaries and recursion.',
+ 'text-data':'Turn text into fields, Unicode bytes, CSV rows and JSON values.',
+ files:'Read and write files, handle missing paths, and use dates and exact decimal values.',
+ reliability:'Interpret tracebacks, handle errors and test behaviour with assertions and unittest.',
+ modules:'Organise source modules, command-line arguments, environments and project metadata.',
+ objects:'Model state and behaviour using classes, dataclasses, composition and protocols.',
+ 'language-patterns':'Use inheritance, special methods, unpacking, comprehensions and pattern matching.',
+ deeper:'Follow references and copies, then build iterators, generators, decorators and context managers.',
+ applications:'Use logging, configuration, SQL parameters, transactions and test doubles.',
+ 'async-performance':'Coordinate asynchronous work and measure costs, timings and cache reuse.',
+ projects:'Combine earlier skills in six applications using text, files, SQLite and async work.',
+ 'dsa-search-sort':'Measure work and implement linear search, binary search, sorting and two-pointer scans.',
+ 'dsa-structures':'Implement stacks, queues, linked lists, hash tables, heaps and search trees.',
+ 'dsa-graphs':'Represent graphs, traverse them, find paths and reuse subproblem results.',
+ 'tinydb-index':'Define database rows, encode values and build a B+ index with range lookup.',
+ 'tinydb-storage':'Save snapshots, commit transactions, replay a journal and recover persistent data.'};
+const labGroups=modules.map((m,i)=>({...m,number:i+1,href:'?lab='+m.id,summary:labSummaries[m.id],requirement:i?'Builds on '+modules[i-1].title+'.':'No previous programming experience required.',lessons:m.lessons.map(id=>({...byId.get(id),href:'?lesson='+id}))}));
+let activeLab;
+function brandLab(group){const brand=document.querySelector('.brand');brand.href=group?group.href:'./';brand.lastElementChild.firstChild.textContent='Python Foundry';brand.querySelector('small').textContent=group?group.title:'Python 3.14 · Learn in your browser';}
+function hubView(){const params=new URL(location.href).searchParams,group=labGroups.find(g=>g.id===params.get('lab')),id=params.get('lesson');if(id){activeLab=labGroups.find(g=>g.lessons.some(l=>l.id===id));brandLab(activeLab);return;}activeLab=group;brandLab(group);$('course-navigation-home').hidden=true;$('lab-hub').hidden=false;$('lab-hub').innerHTML=group?foundryHub.overview(group,labDone,read('hub:last-lesson'),'./'):'<div class="hub-heading"><h2>Choose a lab</h2><p>'+labGroups.filter(g=>g.lessons.every(l=>labDone(l.id))).length+' / '+labGroups.length+' labs complete</p></div><div class="foundry-lab-grid">'+foundryHub.cards(labGroups,labDone)+'</div>';document.title=group?group.title+' · Python Foundry':'Python Foundry';$('home').hidden=!!group;
+ const next=foundryHub.destination(lessons,labDone,read('hub:last-lesson')),action=document.querySelector('.hero-action');action.href='?lesson='+next.lesson.id;action.textContent=next.label+': '+next.lesson.title;
+}
+function arrangeHubArt(){const art=document.querySelector('.hero-figure');art.classList.add('hub-art');if(matchMedia('(max-width:900px)').matches)$('lab-hub').after(art);else document.querySelector('.hero-inner').append(art);const params=new URL(location.href).searchParams;art.hidden=params.has('lesson')||params.has('lab');}
+matchMedia('(max-width:900px)').addEventListener('change',arrangeHubArt);
 function setOutline(open){$('outline').hidden=!open;$('course-toggle').setAttribute('aria-expanded',String(open));}
 function renderOutline(){
  const selection=$('outline-chapter').value;$('course-nav').replaceChildren();
@@ -26,7 +57,7 @@ function renderOutline(){
   for(const id of group.lessons){const lesson=byId.get(id),item=document.createElement('li'),link=document.createElement('a'),number=document.createElement('span'),text=document.createElement('span'),mark=document.createElement('span');link.href='?lesson='+id;number.className='lesson-number';number.textContent=String(lessons.indexOf(lesson)+1).padStart(2,'0');text.className='link-copy';text.textContent=lesson.title;mark.className='lesson-check';mark.dataset.lesson=id;if(lesson===current&&new URL(location.href).searchParams.has('lesson'))link.setAttribute('aria-current','page');link.append(number,text,mark);item.append(link);list.append(item);}box.append(title,list);$('course-nav').append(box);
  }updateProgress();
 }
-function updateProgress(){const count=lessons.filter(item=>read(item.id+'/done')==='true').length;$('progress-label').textContent=count+' / '+lessons.length+' complete';$('complete').checked=current?read(current.id+'/done')==='true':false;document.querySelectorAll('[data-lesson]').forEach(node=>{const done=read(node.dataset.lesson+'/done')==='true';node.innerHTML=done?materialSymbol('check'):'';node.setAttribute('aria-label',done?'Lesson complete':'Not marked complete');});}
+function updateProgress(){const scoped=activeLab?.lessons||lessons,count=scoped.filter(item=>labDone(item.id)).length;$('progress-label').textContent=count+' / '+scoped.length+' complete';$('complete').checked=current?read(current.id+'/done')==='true':false;document.querySelectorAll('[data-lesson]').forEach(node=>{const done=read(node.dataset.lesson+'/done')==='true';node.innerHTML=done?materialSymbol('check'):'';node.setAttribute('aria-label',done?'Lesson complete':'Not marked complete');});}
 for(const group of modules){const option=document.createElement('option');option.value=group.id;option.textContent=group.title;$('outline-chapter').append(option);}
 $('outline-chapter').onchange=renderOutline;$('course-toggle').onclick=()=>setOutline($('outline').hidden);
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!$('outline').hidden&&!document.querySelector('dialog:modal')){setOutline(false);$('course-toggle').focus();}});
@@ -36,7 +67,7 @@ function tabs(){
 function renderDiagram(){renderConcept($('concept-diagram'),current.diagram);}
 function renderFixtures(){const entries=Object.entries(current.fixtures);$('prepared-files').hidden=!entries.length;$('fixture-list').replaceChildren();for(const[name,text]of entries){const title=document.createElement('h3'),pre=document.createElement('pre');title.textContent=name;pre.textContent=text;$('fixture-list').append(title,pre);}}
 function renderReferences(){const list=document.createElement('ul');for(const[title,url]of current.refs){const item=document.createElement('li'),link=document.createElement('a');link.textContent=title+' (new tab)';link.href=url;link.target='_blank';link.rel='noopener';item.append(link);list.append(item);}$('reference-topics').textContent=current.refs.map(r=>r[0]).join(', ');$('reference-links').replaceChildren(list);}
-function pager(id,lesson,label){const link=$(id);link.href=lesson?'?lesson='+lesson.id:'./';link.querySelector('small').textContent=lesson?label:'Course overview';link.querySelector('strong').textContent=lesson?lesson.title:'Choose a lesson';}
+function pager(id,lesson,label){const link=$(id);link.href=lesson?'?lesson='+lesson.id:activeLab?.href||'./';link.querySelector('small').textContent=lesson?label:'Lab overview';link.querySelector('strong').textContent=lesson?lesson.title:activeLab?.title||'Choose a lab';}
 function keyForResult(mode){return current.id+'/'+mode+'-result';}
 function fingerprint(mode){return JSON.stringify({files:mode==='practice'?practiceFiles:files,stdin:$('program-input').value,args:$('program-args').value});}
 function provenance(){for(const mode of ['worked','practice']){const result=mode==='worked'?workedResult:practiceResult,node=$(mode==='worked'?'provenance':'practice-provenance');node.hidden=!result||result.source===fingerprint(mode);node.textContent='Output from earlier code or input. '+(mode==='worked'?'Choose Run code':'Choose Check practice')+' to update it.';}}
@@ -54,7 +85,8 @@ function renderPractice(){
  $('solution-code').textContent=current.solutionFiles['main.py'];$('solution-note').textContent=current.answer;practiceEditor.setValue(practiceFiles['main.py'],[]);$('practice-solution').open=false;
 }
 function selectLesson(id,{focus=false}={}){
- const lesson=byId.get(id)||lessons[0],home=!id;if(current===lesson&&$('home').hidden===!home)return;
+ const lesson=byId.get(id)||lessons[0],home=!id;
+ $('lab-hub').hidden=!home;$('course-navigation-home').hidden=home;hubView();arrangeHubArt();
  if(current)storeState();if(busy||runnerBusy()||databaseWorkspace?.busy)stopRunner('Stopped for navigation');runId++;busy=false;current=lesson;const group=modules.find(g=>g.id===lesson.module);
  $('database-workspace').hidden=home||id!=='tdb-workspace';$('home').hidden=!home;$('lesson').hidden=home;document.title=home?'Python Foundry':lesson.title+' · Python Foundry';
  files=safeFiles(parse(read(lesson.id+'/files'),null),lesson.files);practiceFiles=safeFiles(parse(read(lesson.id+'/practice'),null),lesson.practiceFiles);activeFile=lesson.focusFile;undo=parse(read(lesson.id+'/undo'),null);practiceUndo=parse(read(lesson.id+'/practiceUndo'),null);$('undo-reset').hidden=!undo;$('undo-practice').hidden=!practiceUndo;
@@ -64,9 +96,10 @@ function selectLesson(id,{focus=false}={}){
  editor.setValue(files[activeFile],[lesson.before,lesson.after]);tabs();renderFixtures();renderDiagram();renderPractice();renderReferences();
  $('change-instruction').textContent=lesson.changeInstruction;$('edit-before').textContent=lesson.before;$('edit-after').textContent=lesson.after;$('observe').textContent=lesson.observe;
  $('desktop-workflow').hidden=!lesson.terminal;if(lesson.terminal){$('desktop-title').textContent=lesson.terminal.title;$('desktop-text').textContent=lesson.terminal.text;$('desktop-code').textContent=lesson.terminal.code;}
- $('breadcrumbs').replaceChildren();if(!home){const slash=document.createElement('span'),link=document.createElement('a'),text=document.createElement('span');slash.textContent='/';link.textContent=group.title;link.href='#group-'+group.id;link.onclick=event=>{event.preventDefault();$('outline-chapter').value=group.id;renderOutline();setOutline(true);$('group-'+group.id).scrollIntoView({block:'nearest'});};text.textContent=lesson.title;text.setAttribute('aria-current','page');$('breadcrumbs').append(slash,link,slash.cloneNode(true),text);}
- $('outline-chapter').value=home?'all':group.id;renderOutline();setOutline(home);
- workedResult=parse(read(keyForResult('worked')),null);practiceResult=parse(read(keyForResult('practice')),null);renderResult('worked');renderResult('practice');const index=lessons.indexOf(lesson);pager('previous',lessons[index-1],'Previous lesson');pager('next',lessons[index+1],'Next lesson');setBusy(false);
+ $('breadcrumbs').replaceChildren();if(!home){const slash=document.createElement('span'),link=document.createElement('a'),text=document.createElement('span');slash.textContent='/';link.textContent=group.title;link.href='?lab='+group.id;text.textContent=lesson.title;text.setAttribute('aria-current','page');$('breadcrumbs').append(slash,link,slash.cloneNode(true),text);}
+ $('outline-chapter').value=home?'all':group.id;renderOutline();setOutline(false);if(!home)save('hub:last-lesson',lesson.id);
+ workedResult=parse(read(keyForResult('worked')),null);practiceResult=parse(read(keyForResult('practice')),null);renderResult('worked');renderResult('practice');const scoped=activeLab?.lessons||lessons,index=scoped.findIndex(l=>l.id===lesson.id);pager('previous',scoped[index-1],'Previous lesson');pager('next',scoped[index+1],'Next lesson');setBusy(false);
+ if(home){hubView();arrangeHubArt();}
  if(focus&&!home){$('lesson').focus({preventScroll:true});$('lesson').scrollIntoView({block:'start'});}
 }
 async function run(mode){

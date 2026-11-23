@@ -7,3 +7,5 @@ The homepage states no programming prerequisites and shows a compact original na
 Lesson prose is readable at 17 pixels. CodeMirror provides Python syntax, line numbers, keyboard editing and a blue font mark for the exact excerpt discussed on the page. Editors grow to fit short programs and scroll for long ones. Source files use actual tabs and a visible entry-file note. File inputs, generated outputs and diagnostic inspection have distinct labels. Program input and argument controls are always available; a lesson requiring them keeps the section open.
 
 Essential instructions and result interpretation remain visible. The independent practice editor has its own status, result and checks; it does not alter an example’s successful-execution status. Resource rows contain official Material SVGs and descriptive reference topics. Completion is reversible, and the navigation cards name the destination lessons. All assets needed for these components are part of the offline contract.
+
+The Foundry now uses the [focused lab-series hub](lab-series.md): numbered lab cards, scoped progress and stable lesson links.
