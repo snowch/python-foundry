@@ -65,6 +65,7 @@ async def execute(payload):
     work = tempfile.mkdtemp(prefix='python-foundry-')
     previous_cwd, previous_argv, previous_path = os.getcwd(), sys.argv, sys.path[:]
     previous_input = builtins.input
+    previous_stdin = sys.stdin
     previous_tasks = asyncio.all_tasks()
     previous_handlers, previous_level = logging.root.handlers[:], logging.root.level
     budget = [0]
@@ -96,6 +97,7 @@ async def execute(payload):
         sys.path.insert(0, work)
         sys.argv = [entry, *payload.get('args', [])]
         builtins.input = input_line
+        sys.stdin = input_lines
         with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
             try:
                 code = compile(files[entry], entry, 'exec', flags=ast.PyCF_ALLOW_TOP_LEVEL_AWAIT)
@@ -172,6 +174,7 @@ async def execute(payload):
                 await asyncio.gather(*remaining,return_exceptions=True)
             result['stdout'],result['stderr']=stdout.getvalue(),stderr.getvalue()
         builtins.input = previous_input
+        sys.stdin = previous_stdin
         if previous_main is None:sys.modules.pop('__main__',None)
         else:sys.modules['__main__']=previous_main
         sys.argv, sys.path[:] = previous_argv, previous_path
