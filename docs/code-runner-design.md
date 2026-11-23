@@ -1,0 +1,15 @@
+# Managed Python runtime
+
+One worker per reading window retains an actual Pyodide/CPython interpreter across lesson navigation and both editors. Reading never starts it. An explicit Start runner acknowledges resource use. Otherwise, first Run opens a modal before startup with a dimmed backdrop, Continue run and Runner settings. Escape cancels; no dismissing toast is used.
+
+The default idle limit is 30 minutes; 5/15/30/60-minute choices persist. Count inactivity from the last completed operation, recheck on visibility changes and release the worker when the limit expires. Free memory terminates an active operation and clears the worker while keeping editor data, predictions, output and generated-file records. Do not invent a CPU percentage or memory total: browsers do not expose reliable per-runner measurements.
+
+A run receives explicit source files, prepared fixtures, input lines and argument strings. `content/kernel.py` creates a temporary working directory and a real `__main__` module, captures bounded output, executes the entry with top-level-await support and removes local modules afterward. It restores input, argv, search paths and logging configuration. Async tasks created by a completed run are cancelled and awaited during cleanup. This provides fresh program names and project files while reusing the interpreter; it does not promise a security sandbox against arbitrary changes to the interpreter’s standard-library state.
+
+The worker has a 30-second run limit, 100 KB source limit, 20,000-character output limit and generated-file limits of 1 MB per file, 2 MB total and 12 files. Data files in the working directory that differ from prepared inputs can be downloaded. Arbitrary host filesystem access, desktop processes, virtual environments and pip builds are outside this browser capability. Lessons distinguish those desktop workflows before showing their commands.
+
+Native and browser execution share the same kernel. Async source ends with `await main()` in the editor; project export replaces that final call with `asyncio.run(main())`. The native and Wasm checks cover ordinary output, intended exceptions, guided edits, function cases and asynchronous tasks. Export tests separately run the actual desktop ZIP contents.
+
+Runtime HTTP errors and missing worker assets open a recovery dialog naming the initiating action: Run code, Check practice or Start runner in Code runner. Ordinary Python exceptions are displayed with the code’s traceback; a practice mismatch is an assessment outcome, not a runtime failure. Reload saves a verified per-tab IndexedDB snapshot first. A failed save blocks reload and leaves the work exportable. Stale events from a terminated worker are ignored.
+
+TinyDB uses the same managed interpreter. Run statements executes the current editable engine against binary fixture files and requests a complete returned data-file set. The workspace stays busy until its revision-checked IndexedDB save completes. Stop retains the last saved set; a stale or denied save retains a downloadable candidate. Guarded snapshots preserve these records. See [TinyDB design](tinydb-design.md).
