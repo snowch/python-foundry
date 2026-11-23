@@ -1,6 +1,6 @@
 import {loadPyodide} from './runtime/pyodide.mjs';
 export async function startRuntime(){
- const py=await loadPyodide({indexURL:new URL('./runtime/',import.meta.url).href});
+ const py=await loadPyodide({indexURL:new URL('./runtime/',import.meta.url).href,packageBaseUrl:new URL('./runtime/',import.meta.url).href});
  const response=await fetch(new URL('./kernel.py',import.meta.url));if(!response.ok)throw Error('Could not load the Python runner kernel (HTTP '+response.status+').');
  const source=await response.text();
  py.globals.set('_kernel_source',source);
