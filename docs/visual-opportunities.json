@@ -1,0 +1,3227 @@
+{
+  "review_date": "2026-11-25",
+  "base_commit": "dbac5923f2fc5b7026d265e92481004fc761184e",
+  "course": "python",
+  "scope": "All lesson titles, explanations and current diagram placements were inventoried. Curated additions and redesigns were checked against worked starters and prerequisites. This is a visual-opportunity review, not a sentence-by-sentence copyedit or a claim that every program was executed.",
+  "design_standard": "https://github.com/snowch/cuda-python-lab/blob/main/docs/course-design-guide.md",
+  "method": "Look for references to shared objects, changing slots, exclusive bounds, call/return state, alternative branches, dependency edges, occupancy thresholds and publication/retention boundaries. Add a model when it answers a named question more directly than code/output alone. Keep simple syntax, API lookup and one-step results concise.",
+  "originality": "Original local HTML, CSS and geometric connectors derived from these projects’ fixtures; no third-party illustration assets.",
+  "model_source": "web/learning-models.js",
+  "lessons": [
+    {
+      "id": "first-program",
+      "title": "Print your first message",
+      "url": "https://snowch.github.io/python-foundry/?lesson=first-program",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A program is a sequence of instructions. Python executes this program from top to bottom. The editor contains the complete program; you do not need to install Python to run it here. print(\"Hello, Python!\") calls Python’s print function. The text inside quotes is a string. The quotes mark the string in the source; Console displays the text without the quotes.",
+      "starter_sha256": "3fa9a158642ef28d3fcc5270baa77a57f1bd89148b8982b4e89ae5963e37e261",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "names",
+      "title": "Give a value a name",
+      "url": "https://snowch.github.io/python-foundry/?lesson=names",
+      "decision": "Retained",
+      "passage": "An assignment such as count = 3 binds the name count to a value. Later expressions read the value bound to that name. The equals sign assigns a value; it does not ask whether two values are equal. Python evaluates the right side of an assignment before binding the name on the left. In count = count + 1, the old value is read, one is added, and count is rebound to the new value.",
+      "starter_sha256": "1aeb29df884af9182cfca6d4d9fc3510104d44ca75b14521efc8fac7c03da3d2",
+      "question": "Which value does each read of count use?",
+      "design": null,
+      "reason": "The existing diagram already supplies the relevant relationship; retain its caption and assumptions.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "arithmetic",
+      "title": "Calculate before printing",
+      "url": "https://snowch.github.io/python-foundry/?lesson=arithmetic",
+      "decision": "Keep prose / worked evidence",
+      "passage": "Integers are whole numbers. The +, -, * and / operators add, subtract, multiply and divide numeric values. Python performs multiplication before addition unless parentheses change the grouping. A floating-point number approximates a real number with limited precision. Division with / produces a floating-point result; // gives floor division. Printing a quoted calculation displays text instead of performing arithmetic.",
+      "starter_sha256": "f0572873d9680bb43edc225dccddccc73d766ae466357f1bab6edd7293902698",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "strings",
+      "title": "Build and measure text",
+      "url": "https://snowch.github.io/python-foundry/?lesson=strings",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A string is an ordered sequence of text characters. The + operator joins two strings. It does not insert spaces automatically; include a space in one of the strings when the output needs one. len(text) returns the number of characters in a string. A space counts as a character. Later lessons examine why a character count can differ from a file’s byte count.",
+      "starter_sha256": "eb6f03bbac64c8fd00d8b50e51694317f063f73c45313ae913ed495632e1fb2c",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "formatting",
+      "title": "Put values inside a message",
+      "url": "https://snowch.github.io/python-foundry/?lesson=formatting",
+      "decision": "Keep prose / worked evidence",
+      "passage": "An f-string starts with f before its opening quote. Python evaluates expressions inside braces and inserts their values into the surrounding text. A format such as :.2f displays a number with two digits after the decimal point. Formatting changes the displayed text; it does not change the original number or turn floating-point arithmetic into exact decimal arithmetic.",
+      "starter_sha256": "18c41dbcee2751e7efbc6548732ac6f864b751aecde77d9ce5175cf395e8686e",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "input",
+      "title": "Read the prepared input",
+      "url": "https://snowch.github.io/python-foundry/?lesson=input",
+      "decision": "Keep prose / worked evidence",
+      "passage": "Program input below the editor already contains 19 and 23 on separate lines. input() reads one line and returns a string. In this browser, input comes from that field; Python does not open a separate prompt. int(text) converts integer text to an integer. Adding two strings joins their text, while adding two integers computes a sum. Keep the conversions so the program performs arithmetic.",
+      "starter_sha256": "f68bee9753e70fe63eb9b82ebcc30ba45ac4954ae631665edd2258fd6c8d77e7",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "comparisons",
+      "title": "Ask a true-or-false question",
+      "url": "https://snowch.github.io/python-foundry/?lesson=comparisons",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A comparison produces True or False, the two Boolean values. == compares values; = assigns a value to a name. The operators , >= and != compare order or inequality. A boundary value is useful when checking a rule. The example compares the same age with both >= 18 and > 18 so you can see whether 18 itself is accepted.",
+      "starter_sha256": "e09965680042ee591e388f1a613c2034d05c8687d7835c8bd9860f74857bb680",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "boolean-logic",
+      "title": "Combine conditions",
+      "url": "https://snowch.github.io/python-foundry/?lesson=boolean-logic",
+      "decision": "Keep prose / worked evidence",
+      "passage": "and requires both conditions to be true. or requires at least one true condition. not reverses a Boolean value. Parentheses can make the grouping of a rule easier to read. Python short-circuits and and or: it does not evaluate the second expression when the first already determines the result. The guard x != 0 prevents the division from being evaluated when x is zero.",
+      "starter_sha256": "8486681b640664542f8c9a84a57bb8c209f5d3aac938916b51c7302bfd0d5704",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "if",
+      "title": "Choose whether a block runs",
+      "url": "https://snowch.github.io/python-foundry/?lesson=if",
+      "decision": "Revised",
+      "passage": "if checks a condition. A colon starts its block, and four spaces indent the statements in that block. Python runs the indented statements only when the condition is true. else introduces the alternative block. The final print below is not indented, so it runs after either branch. Keep the indentation when editing the threshold.",
+      "starter_sha256": "eb84c8edb5682640b6f5f6086f92e7c6fe56eeecc88c9e484d91020d77e2b51c",
+      "question": "For score=7, why are pass and finished both printed?",
+      "design": {
+        "title": "One branch runs; both paths reach the final print",
+        "question": "For score=7, why are pass and finished both printed?",
+        "kind": "branch",
+        "root": "score ≥ 6?",
+        "paths": [
+          {
+            "when": "True · 7 ≥ 6",
+            "result": "print pass",
+            "detail": ""
+          },
+          {
+            "when": "False · not selected",
+            "result": "print retry",
+            "detail": ""
+          }
+        ],
+        "join": "After either branch: print finished",
+        "note": "Only one indented branch executes. The final print is outside the conditional and runs after either path.",
+        "description": "For score=7, why are pass and finished both printed? score ≥ 6?. True · 7 ≥ 6. print pass. ; False · not selected. print retry. . After either branch: print finished. Only one indented branch executes. The final print is outside the conditional and runs after either path."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "elif",
+      "title": "Order several possible cases",
+      "url": "https://snowch.github.io/python-foundry/?lesson=elif",
+      "decision": "Keep prose / worked evidence",
+      "passage": "elif means else if. Python tests branches in order and runs only the first branch whose condition is true. If none is true, the else block runs. A score of 90 also satisfies score >= 60. Testing >= 90 first prevents the broader passing condition from hiding the highest category.",
+      "starter_sha256": "f86e7201672d9d86c48e55844cb4af85a652b7dd4082b164ffc01066a1d64bb2",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "for",
+      "title": "Run a block for each character",
+      "url": "https://snowch.github.io/python-foundry/?lesson=for",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A for loop takes one item at a time from a sequence. A string is a sequence, so for letter in name binds letter to each character in order. The indented print runs once per character. The unindented final print runs once after the loop, not once per character.",
+      "starter_sha256": "14acd47a5a099388e685c5c502658335b32426c2b57878c1eb304d5dadd96d1d",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "while",
+      "title": "Repeat until a condition changes",
+      "url": "https://snowch.github.io/python-foundry/?lesson=while",
+      "decision": "Keep prose / worked evidence",
+      "passage": "while checks its condition before each iteration. The example prints the current count and then increases it. Once count is no longer less than 3, the loop ends. A loop that never makes its condition false can run indefinitely. Stop in this workbench terminates the worker, and a run also has a time limit. Neither control fixes the program; the update inside the loop does.",
+      "starter_sha256": "9c81e7c759fe18e7ceb2bfba027bffd37f2b5ff0cdccbb7e12cc36bbef60af60",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "break-continue",
+      "title": "Skip an item or stop a loop",
+      "url": "https://snowch.github.io/python-foundry/?lesson=break-continue",
+      "decision": "Keep prose / worked evidence",
+      "passage": "continue skips the remainder of the current iteration and moves to the next item. break exits the nearest loop entirely. The starter skips the question mark, prints the next letter, and stops at the exclamation mark. Statements after break’s loop can still run; break does not end the entire program.",
+      "starter_sha256": "b296043d4bf13a1164daec4e5b388552f330b2b3e570da9f17f2ddc2fc3e3235",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "lists",
+      "title": "Keep values in order",
+      "url": "https://snowch.github.io/python-foundry/?lesson=lists",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A list stores an ordered group of values inside square brackets. A for loop visits those values in order. sum(values) adds numeric values; len(values) counts items. The same list is used by the loop, sum and len. Changing an element changes the printed item and the sum, while the number of items stays the same.",
+      "starter_sha256": "dda6c48e54c67f8a176cd980e0425e4bca8610fbb9a1c067f6febba5a098d2fd",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "index-slice",
+      "title": "Select an item or a slice",
+      "url": "https://snowch.github.io/python-foundry/?lesson=index-slice",
+      "decision": "Added",
+      "passage": "List indexes start at zero: values[0] is the first item. A negative index counts backward from the end, so values[-1] is the last item. The slice values[start:stop] makes a new list from start up to, but not including, stop. A slice can contain several items; a single index selects one item.",
+      "starter_sha256": "4283fb3bf79a7e1067a5ea4adb4920b8839726cd67fe45664e5bc5c9a0abc60b",
+      "question": "Why does values[1:3] produce [20,30]?",
+      "design": {
+        "title": "A slice includes its start and excludes its stop",
+        "question": "Why does values[1:3] produce [20,30]?",
+        "kind": "slots",
+        "rows": [
+          {
+            "label": "Original values",
+            "values": [
+              10,
+              20,
+              30,
+              40
+            ],
+            "note": "Index 0 → 10; index -1 → 40. The slice includes indices 1 and 2.",
+            "active": [
+              1,
+              2
+            ],
+            "muted": [
+              0,
+              3
+            ],
+            "tags": {
+              "1": "start",
+              "3": "stop excluded"
+            }
+          }
+        ],
+        "note": "A list slice creates a new outer list of the selected values. The stop boundary is not another included element.",
+        "description": "Why does values[1:3] produce [20,30]? Original values: index 0 = 10, index 1 = 20, index 2 = 30, index 3 = 40. Index 0 → 10; index -1 → 40. The slice includes indices 1 and 2.. A list slice creates a new outer list of the selected values. The stop boundary is not another included element."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "list-mutation",
+      "title": "Change the contents of a list",
+      "url": "https://snowch.github.io/python-foundry/?lesson=list-mutation",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A list is mutable: its contents can change. Assigning values[1] = 9 replaces one item. values.append(12) adds a new item at the end. A method is a function accessed through a value, such as values.append. append changes the list in place and returns None; print the list afterward to inspect the change.",
+      "starter_sha256": "ae8c5cc257b59dc78d2ebf0bcdbecf18b581e30f014d8fbd83733af94b85f1a2",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "tuples",
+      "title": "Group a fixed set of fields",
+      "url": "https://snowch.github.io/python-foundry/?lesson=tuples",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A tuple groups values in a fixed order, often as a small record. Unlike a list, a tuple does not allow its positions to be reassigned. Unpacking binds one name per item. The number of names must match the tuple’s items unless a starred target deliberately collects the remainder.",
+      "starter_sha256": "d0c52c7c249b59a94bc782fd35611b87516c237b4b6fae1158eaed2d8c4b6ee9",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "dictionaries",
+      "title": "Look up a value by its key",
+      "url": "https://snowch.github.io/python-foundry/?lesson=dictionaries",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A dictionary maps keys to values. Here, the strings Ada and Lin are keys, and their scores are values. scores[\"Ada\"] looks up Ada’s score. Assigning a value to an existing key replaces that value. get(key, default) returns a default for a missing key instead of raising KeyError. Choose a default that makes sense for the data.",
+      "starter_sha256": "c99d4eca158ea91688b1efe8e326f63c8627cd31a29922c5bf2615cf7a60e951",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "sets",
+      "title": "Keep unique values",
+      "url": "https://snowch.github.io/python-foundry/?lesson=sets",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A set keeps distinct values. Constructing a set from repeated values removes duplicates. Use in to ask whether a value belongs to a set. The & operator computes the intersection: values present in both sets. Set iteration order is not a sorting rule, so sorted converts the displayed result to a predictable ordered list.",
+      "starter_sha256": "ce6474e83714ca7c7d6ec7dee9dfc4042c29732d9dc1fe5cdb23d77ca0aa7deb",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "range",
+      "title": "Choose a numeric loop boundary",
+      "url": "https://snowch.github.io/python-foundry/?lesson=range",
+      "decision": "Added",
+      "passage": "range(start, stop) produces integer positions from start up to, but excluding, stop. A third argument sets the step. range does not construct a stored list of every number. Use an excluded stop deliberately: range(1, 4) produces 1, 2 and 3. Printing list(range(...)) is a small inspection tool here, not a requirement for using range in a loop.",
+      "starter_sha256": "ecb6194e93242ef4017d7e8666242977768796f77559f6ead42743d141b4f87b",
+      "question": "Why does range(1,4) print 1,2,3?",
+      "design": {
+        "title": "The stop value is excluded",
+        "question": "Why does range(1,4) print 1,2,3?",
+        "kind": "table",
+        "headings": [
+          "Range",
+          "Produced values",
+          "Excluded boundary"
+        ],
+        "rows": [
+          [
+            "range(1,4)",
+            "1 → 2 → 3",
+            "4"
+          ],
+          [
+            "range(0,6,2)",
+            "0 → 2 → 4",
+            "6"
+          ]
+        ],
+        "label": "",
+        "links": [],
+        "note": "These are the two ranges in the starter. range describes integer steps without storing a list of every value; list(...) materializes one for the second print.",
+        "description": "Why does range(1,4) print 1,2,3? Range; Produced values; Excluded boundary. range(1,4); 1 → 2 → 3; 4; range(0,6,2); 0 → 2 → 4; 6. . . These are the two ranges in the starter. range describes integer steps without storing a list of every value; list(...) materializes one for the second print."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "enumerate",
+      "title": "Keep an item and its position",
+      "url": "https://snowch.github.io/python-foundry/?lesson=enumerate",
+      "decision": "Keep prose / worked evidence",
+      "passage": "enumerate(items) produces pairs containing an index and an item. Unpack each pair into two loop names. The optional start argument changes the displayed counter. Changing start does not change the underlying list or its zero-based indexes. It changes the numbers produced by enumerate, which is useful for human-facing row numbers.",
+      "starter_sha256": "c98fba02ea19bcad32143598fe1280c093188b13f2b09375df197202440e40cc",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "zip",
+      "title": "Pair corresponding values",
+      "url": "https://snowch.github.io/python-foundry/?lesson=zip",
+      "decision": "Added",
+      "passage": "zip combines items at the same positions in separate sequences. Each iteration receives one tuple containing the corresponding values. By default, zip stops when the shortest input ends. strict=True raises an error instead when lengths differ; use that option when dropping unmatched data would be a mistake.",
+      "starter_sha256": "c1c0bc327000dc4c15571afe5cb50b2975b161153d50e365869518f040198ed6",
+      "question": "Why is score 5 not printed?",
+      "design": {
+        "title": "zip stops at the shorter input",
+        "question": "Why is score 5 not printed?",
+        "kind": "table",
+        "headings": [
+          "Position",
+          "names",
+          "scores",
+          "Paired output"
+        ],
+        "rows": [
+          [
+            "0",
+            "Ada",
+            "9",
+            "Ada 9"
+          ],
+          [
+            "1",
+            "Lin",
+            "7",
+            "Lin 7"
+          ],
+          [
+            "2",
+            "No name",
+            "5",
+            "No pair"
+          ]
+        ],
+        "label": "",
+        "links": [],
+        "note": "Default zip stops when one input ends. The extra score is not matched with a missing name. strict=True is a separate contract.",
+        "description": "Why is score 5 not printed? Position; names; scores; Paired output. 0; Ada; 9; Ada 9; 1; Lin; 7; Lin 7; 2; No name; 5; No pair. . . Default zip stops when one input ends. The extra score is not matched with a missing name. strict=True is a separate contract."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "nested-loops",
+      "title": "Trace a loop inside a loop",
+      "url": "https://snowch.github.io/python-foundry/?lesson=nested-loops",
+      "decision": "Revised",
+      "passage": "For each iteration of the outer loop, the inner loop runs through its input again. Two outer items and three inner items produce six pairs. The example shows a Cartesian product: every row is combined with every column. This differs from zip, which pairs only corresponding positions.",
+      "starter_sha256": "8778b60df115bec195c3e860d234a724e125d2929a902edf7a91dc7abcf138c9",
+      "question": "Why do two rows and two columns produce four pairs?",
+      "design": {
+        "title": "Each row visits both columns",
+        "question": "Why do two rows and two columns produce four pairs?",
+        "kind": "table",
+        "headings": [
+          "Outer row",
+          "Inner column a",
+          "Inner column b"
+        ],
+        "rows": [
+          [
+            "1",
+            "1: (1,a)",
+            "2: (1,b)"
+          ],
+          [
+            "2",
+            "3: (2,a)",
+            "4: (2,b)"
+          ]
+        ],
+        "label": "Printed order: 1 → 2 → 3 → 4",
+        "links": [],
+        "note": "The inner loop starts again for each outer value. The grid counts combinations and their order; it is not a timing measurement.",
+        "description": "Why do two rows and two columns produce four pairs? Outer row; Inner column a; Inner column b. 1; 1: (1,a); 2: (1,b); 2; 3: (2,a); 4: (2,b). Printed order: 1 → 2 → 3 → 4. . The inner loop starts again for each outer value. The grid counts combinations and their order; it is not a timing measurement."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "comprehensions",
+      "title": "Build a list from a rule",
+      "url": "https://snowch.github.io/python-foundry/?lesson=comprehensions",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A list comprehension builds a new list by evaluating an expression for each input item. In [value * 2 for value in values], value * 2 is the output expression. An if clause keeps only items that meet a condition. Filtering and transforming are separate decisions: the filter chooses which input items remain; the expression chooses their output values.",
+      "starter_sha256": "d0550d85c019cc5809586a55cb0c910fb46348d60d54ad93033ce9dee6b10cea",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "sorting",
+      "title": "Sort by a chosen key",
+      "url": "https://snowch.github.io/python-foundry/?lesson=sorting",
+      "decision": "Keep prose / worked evidence",
+      "passage": "sorted returns a new list in ascending order. The key argument supplies a function that extracts the value used for comparison. len is already a function, so key=len sorts strings by length. reverse=True reverses the ordering. The original list remains unchanged; list.sort is a different, in-place operation that returns None.",
+      "starter_sha256": "df4ab007c7c55f907a2faa4b54993c063d9009a50bb601511b18da99f608ea54",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "return-values",
+      "title": "Return a result to the caller",
+      "url": "https://snowch.github.io/python-foundry/?lesson=return-values",
+      "decision": "Retained",
+      "passage": "def names a function and introduces its indented body. Parameters name the inputs. Calling the function runs that body with the supplied values. return sends a value back to the caller and ends that call. The example prints outside the function so the same returned value could also be saved or used in another calculation.",
+      "starter_sha256": "e3a2fa714e4288b4e84674da89dcd48f238b22f7ad51e2546111caafbb0edbf3",
+      "question": "Where does 42 go after the function returns?",
+      "design": null,
+      "reason": "The existing diagram already supplies the relevant relationship; retain its caption and assumptions.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "arguments",
+      "title": "Match arguments to parameters",
+      "url": "https://snowch.github.io/python-foundry/?lesson=arguments",
+      "decision": "Keep prose / worked evidence",
+      "passage": "Arguments are the values supplied in a call; parameters are the names in the function definition. Positional arguments match parameters in order. Keyword arguments name the parameter they supply. Reordering keyword arguments does not change which parameter gets each value. Prefer names when an argument’s role would otherwise be unclear.",
+      "starter_sha256": "5b4f5340c73dff61192095507bfd3e95322c3d8665871f68d8d2839bdfce657d",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "defaults",
+      "title": "Provide a useful default",
+      "url": "https://snowch.github.io/python-foundry/?lesson=defaults",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A default value follows a parameter’s equals sign. Python uses that value when the caller omits the corresponding argument. Keep defaults simple and predictable. A later lesson explains why a mutable list is usually a poor default: default expressions are evaluated once when the function is defined.",
+      "starter_sha256": "d116275b5d76411b6d488fb61700099b0c861b15453e16ae198fb4e466c15647",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "scope",
+      "title": "Keep a function’s local names local",
+      "url": "https://snowch.github.io/python-foundry/?lesson=scope",
+      "decision": "Added",
+      "passage": "A function call has local names for its parameters and assignments. Rebinding a local name does not rebind a name in the caller. The value returned by the function can be assigned by the caller. Making that assignment explicit usually makes data flow clearer than changing global variables from inside a function.",
+      "starter_sha256": "a7f6ec0afea5093a991cbd824640fd389da7c56bb14f7224b9d84d498c8e0a9f",
+      "question": "Why does the caller still print count as 3?",
+      "design": {
+        "title": "A function parameter is a local name",
+        "question": "Why does the caller still print count as 3?",
+        "kind": "table",
+        "headings": [
+          "Step",
+          "Caller count",
+          "Local parameter count"
+        ],
+        "rows": [
+          [
+            "Before call",
+            "3",
+            "not present"
+          ],
+          [
+            "Inside next_count",
+            "3",
+            "3 → 4"
+          ],
+          [
+            "After return",
+            "3",
+            "local call finished; result 4 returned"
+          ]
+        ],
+        "label": "",
+        "links": [],
+        "note": "Rebinding the local parameter does not rebind the caller’s name. The first print uses the returned 4; the second reads caller count=3.",
+        "description": "Why does the caller still print count as 3? Step; Caller count; Local parameter count. Before call; 3; not present; Inside next_count; 3; 3 → 4; After return; 3; local call finished; result 4 returned. . . Rebinding the local parameter does not rebind the caller’s name. The first print uses the returned 4; the second reads caller count=3."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "function-boundaries",
+      "title": "Handle an empty collection",
+      "url": "https://snowch.github.io/python-foundry/?lesson=function-boundaries",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A function’s contract says what it accepts and what it returns. An empty list is false in a condition, so not values is true for an empty list. The average function below returns None for an empty list instead of dividing by zero. None represents the absence of a result here, not a numeric average of zero. A caller must distinguish those cases before using the result in arithmetic.",
+      "starter_sha256": "b4348dcb5606ae11e680931ebadc797696ab64a4e48d25311a6d088e4db290d2",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "recursion",
+      "title": "Make a smaller recursive call",
+      "url": "https://snowch.github.io/python-foundry/?lesson=recursion",
+      "decision": "Added",
+      "passage": "A recursive function calls itself. The countdown example prints the current number, then calls itself with a smaller number. The base case handles zero and returns without another call. Without a reachable base case, calls keep accumulating until Python raises a recursion error. A loop is often simpler for long sequences.",
+      "starter_sha256": "bc7803deb74cadf84868be0a7f6452feacb4de157bdb9226ce6e5632a2c5d686",
+      "question": "Why do 3,2,1 print before go?",
+      "design": {
+        "title": "Each call retains its own number",
+        "question": "Why do 3,2,1 print before go?",
+        "kind": "frames",
+        "frames": [
+          {
+            "call": "countdown(3)",
+            "pending": "print 3; call countdown(2)",
+            "result": "Returns after the smaller call"
+          },
+          {
+            "call": "countdown(2)",
+            "pending": "print 2; call countdown(1)",
+            "result": "Returns to countdown(3)"
+          },
+          {
+            "call": "countdown(1)",
+            "pending": "print 1; call countdown(0)",
+            "result": "Returns to countdown(2)"
+          },
+          {
+            "call": "countdown(0)",
+            "pending": "Base case: print go",
+            "result": "Return without another recursive call"
+          }
+        ],
+        "note": "These are logical call frames. Each call has its own local number; a smaller argument is required for termination.",
+        "description": "Why do 3,2,1 print before go? countdown(3). print 3; call countdown(2). Returns after the smaller call; countdown(2). print 2; call countdown(1). Returns to countdown(3); countdown(1). print 1; call countdown(0). Returns to countdown(2); countdown(0). Base case: print go. Return without another recursive call. These are logical call frames. Each call has its own local number; a smaller argument is required for termination."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "split-join",
+      "title": "Split a line and join its fields",
+      "url": "https://snowch.github.io/python-foundry/?lesson=split-join",
+      "decision": "Keep prose / worked evidence",
+      "passage": "split(\",\") separates a string at commas and returns a list of strings. strip removes whitespace from the beginning and end of a string, not from its middle. separator.join(parts) builds one string from a sequence of strings. A comprehension can clean each field before joining; the original text remains unchanged.",
+      "starter_sha256": "4cd1eeed60ae0d631e1eb550fd2439a7a376db96272a44081055be2dac9d572d",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "normalizing-text",
+      "title": "Compare text after normalization",
+      "url": "https://snowch.github.io/python-foundry/?lesson=normalizing-text",
+      "decision": "Keep prose / worked evidence",
+      "passage": "Text comparisons are exact unless you normalize the inputs. strip handles surrounding whitespace. casefold performs a stronger case-insensitive transformation than lower and is designed for caseless matching. Normalization is a policy, not a universal correction. Preserve the original spelling when displaying a name; use the normalized form only for the comparison that needs it.",
+      "starter_sha256": "b164e634e0e851217ccd7c1bcd59e4b4f0c03feb475dd76adfa83add9c94ae57",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "unicode-bytes",
+      "title": "Distinguish characters from encoded bytes",
+      "url": "https://snowch.github.io/python-foundry/?lesson=unicode-bytes",
+      "decision": "Added",
+      "passage": "Python strings hold Unicode text. Encoding a string as UTF-8 produces bytes, the units written to a file or sent over a connection. Some characters need more than one UTF-8 byte. len(text) counts Unicode code points, not necessarily user-perceived symbols. len(text.encode(\"utf-8\")) counts bytes. Neither number alone measures how wide the text appears on screen.",
+      "starter_sha256": "0b7ed684bd250c9302309e70b2fc6ecb88aee09042abeececf298a0a056d8fe0",
+      "question": "Why is café length 4 as text but length 5 as bytes?",
+      "design": {
+        "title": "One scalar value can use two UTF-8 bytes",
+        "question": "Why is café length 4 as text but length 5 as bytes?",
+        "kind": "bytes",
+        "label": "Unicode scalar values aligned with UTF-8 bytes",
+        "values": [
+          "63",
+          "61",
+          "66",
+          "C3",
+          "A9"
+        ],
+        "groups": [
+          {
+            "label": "c",
+            "size": 1
+          },
+          {
+            "label": "a",
+            "size": 1
+          },
+          {
+            "label": "f",
+            "size": 1
+          },
+          {
+            "label": "é",
+            "size": 2
+          }
+        ],
+        "note": "len(text) counts code points in this example; len(data) counts bytes. A code point is not always a complete user-perceived character. Decoding the full byte sequence restores café.",
+        "description": "Why is café length 4 as text but length 5 as bytes? Unicode scalar values aligned with UTF-8 bytes. c uses byte offsets 0: 63; a uses byte offsets 1: 61; f uses byte offsets 2: 66; é uses byte offsets 3 through 4: C3, A9. len(text) counts code points in this example; len(data) counts bytes. A code point is not always a complete user-perceived character. Decoding the full byte sequence restores café."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "regular-expressions",
+      "title": "Find a pattern in text",
+      "url": "https://snowch.github.io/python-foundry/?lesson=regular-expressions",
+      "decision": "Keep prose / worked evidence",
+      "passage": "import re makes Python’s regular-expression tools available; re is part of the standard library and needs no extra installation. A regular expression describes a pattern to match in text. The raw string r\"\\d+\" passes the backslash to the pattern engine. \\d matches a digit, and + requires one or more matches. findall returns matching strings; convert them before numeric arithmetic.",
+      "starter_sha256": "d23b58565ebf8f209e2b3f2ff0bf5bd3ce831370f5ac7933c6dd710cb44f4912",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "csv-data",
+      "title": "Read CSV fields that contain commas",
+      "url": "https://snowch.github.io/python-foundry/?lesson=csv-data",
+      "decision": "Keep prose / worked evidence",
+      "passage": "CSV uses quoting rules to distinguish separators from commas inside a field. import csv provides a parser that understands those rules. csv.reader returns rows containing strings. Convert numeric fields explicitly. The name \"Ada, A.\" is one field because it is quoted in the prepared CSV text.",
+      "starter_sha256": "f2267438923c13969d318c536e888d72e78705fa6e57da806a966d508f22339b",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "json-data",
+      "title": "Decode JSON into Python values",
+      "url": "https://snowch.github.io/python-foundry/?lesson=json-data",
+      "decision": "Keep prose / worked evidence",
+      "passage": "JSON is a text format for exchanging structured data. json.loads decodes JSON text into Python values such as dictionaries and lists. json.dumps encodes Python values back into JSON text. Changing the decoded dictionary does not rewrite the original string. Encoding again produces a new string. sort_keys=True makes this small display predictable; it is not required for correct decoding.",
+      "starter_sha256": "2d6c8cda8247f9c21f24e270fad26e7e0ee60103c9d39088873bdf8ac3193782",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "paths",
+      "title": "Represent and inspect a path",
+      "url": "https://snowch.github.io/python-foundry/?lesson=paths",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A path identifies a file or directory. pathlib.Path provides operations for paths without manually joining directory separators. The prepared file data/readings.txt is copied into this run’s working directory automatically. Path.name and Path.suffix describe the filename; read_text reads its contents. The virtual working directory is fresh for each run. Generated files can be downloaded from the run’s file results.",
+      "starter_sha256": "cae9ae1e3129dbe8450d47b5143c098458b92d24c0f9736573a6f262a315516d",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "write-files",
+      "title": "Write a result and read it back",
+      "url": "https://snowch.github.io/python-foundry/?lesson=write-files",
+      "decision": "Keep prose / worked evidence",
+      "passage": "write_text writes a string to a file, replacing existing contents. Passing encoding=\"utf-8\" makes the text encoding explicit. It returns the number of characters written. This program creates report.txt in the run’s virtual directory. After Run code, expand Generated files to download that result. Rerunning starts with the prepared files again, so the old report is not an input to the next run.",
+      "starter_sha256": "a97a11b3be8c53b0b71507668e7a17dc6e0f86b362bc9aba7c9768231f921829",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "with-files",
+      "title": "Close a file with a with block",
+      "url": "https://snowch.github.io/python-foundry/?lesson=with-files",
+      "decision": "Keep prose / worked evidence",
+      "passage": "open returns a file object. A with statement manages that object for a block and closes it when the block ends, including when an exception leaves the block. The first print reads one line. The second print is outside the with block and checks file.closed. Keep the second print unindented so it observes the closed file.",
+      "starter_sha256": "c5c7d3fac50eb43ffc5fa6fdaf49886bf6a55f1818789f1483f43ab1d0e592ba",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "file-errors",
+      "title": "Handle a missing input file",
+      "url": "https://snowch.github.io/python-foundry/?lesson=file-errors",
+      "decision": "Keep prose / worked evidence",
+      "passage": "An exception reports that an operation could not complete normally. open raises FileNotFoundError when its path does not exist. A try block identifies the operation whose failure you expect. except FileNotFoundError handles that specific failure. Catching every exception could also hide a programming error. The starter’s missing.txt is intentionally absent from the prepared files.",
+      "starter_sha256": "e8eba6989e671252dec6c1da8e96953cd493c55fec328bc7e3262422dee55223",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "dates",
+      "title": "Calculate a difference between dates",
+      "url": "https://snowch.github.io/python-foundry/?lesson=dates",
+      "decision": "Keep prose / worked evidence",
+      "passage": "datetime.date represents a calendar date. fromisoformat parses a year-month-day string. Subtracting two dates returns a timedelta, whose days field gives the day difference. These dates have no time of day or time zone. They are suitable for this calendar-day calculation, not for measuring elapsed time across time-zone or clock changes.",
+      "starter_sha256": "de98b8305581cede20f503d9f78d8405a69da71631e2a9e3a5498ee6c869f6a5",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "decimal",
+      "title": "Choose exact decimal arithmetic",
+      "url": "https://snowch.github.io/python-foundry/?lesson=decimal",
+      "decision": "Keep prose / worked evidence",
+      "passage": "Binary floating-point cannot represent every decimal fraction exactly. The decimal module provides decimal arithmetic with a configurable precision. Construct Decimal from strings when the decimal spelling is the intended value. Constructing from an existing float carries that float’s approximation into the decimal value.",
+      "starter_sha256": "5b14ee7241485abf533c90bccf1c52044c9e36a4a7c8ab7505d373db3e761dbe",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "tracebacks",
+      "title": "Read the exception and its source line",
+      "url": "https://snowch.github.io/python-foundry/?lesson=tracebacks",
+      "decision": "Keep prose / worked evidence",
+      "passage": "The starter intentionally raises NameError. Run code unchanged and inspect the exception name, the filename main.py and the source line in the traceback. This is a program error, not a failed runtime download. The variable is named total, but the print statement uses totla. Correcting that one name makes the same prepared program run. Do not reload the course to fix a Python name error.",
+      "starter_sha256": "0588e951c3a1a6753473515b6a64b71513fe69b49720ef83f6d844fbea709a77",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "try-except",
+      "title": "Recover from a failed conversion",
+      "url": "https://snowch.github.io/python-foundry/?lesson=try-except",
+      "decision": "Keep prose / worked evidence",
+      "passage": "int(\"twelve\") raises ValueError because the text is not an integer spelling. except ValueError handles that conversion failure and chooses a defined alternative. Keep unrelated code outside the try block so its errors are not mistaken for conversion failures. The starter prints the chosen value after either the successful or fallback path.",
+      "starter_sha256": "a2fe39ac24f182f08d4e982e8b38f8a05f7d3fcd5c9c9ef3f9cb5e4ab4e36d8d",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "raise",
+      "title": "Reject an invalid argument",
+      "url": "https://snowch.github.io/python-foundry/?lesson=raise",
+      "decision": "Keep prose / worked evidence",
+      "passage": "raise reports an exception deliberately. The positive_count function accepts values greater than zero and raises ValueError otherwise. An exception message should name the violated condition. The caller catches the expected ValueError here to display the message; a caller that cannot recover should let the error reach its boundary.",
+      "starter_sha256": "cc2aa51b1279855e1ce6e3e6eb75c01caf0b38a66dfbfa674c3f5aa7e5e5d334",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "error-boundaries",
+      "title": "Choose where an error becomes a message",
+      "url": "https://snowch.github.io/python-foundry/?lesson=error-boundaries",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A calculation function can raise an informative exception without deciding how a user should see it. A boundary such as a command-line entry function can catch that exception and print a concise message. Do not return a success-shaped value after an unexpected failure. Here, only ValueError from the documented count validation is translated into a user-facing rejection.",
+      "starter_sha256": "cf6361f89acf9a8e575f409d17b696702aa8950f9c9abfde2db2c17b83004698",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "assertions",
+      "title": "Check an assumption with an assertion",
+      "url": "https://snowch.github.io/python-foundry/?lesson=assertions",
+      "decision": "Keep prose / worked evidence",
+      "passage": "assert condition raises AssertionError when the condition is false. A message after a comma can explain the expected behaviour. Assertions are useful for tests and internal assumptions. Python can remove them under optimization, so do not rely on assert to validate untrusted input or enforce a security boundary.",
+      "starter_sha256": "a1f81d36107521c9297b012e5f3bfdb97c450a8d14a072496ce5feb53f095bd5",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "unittest",
+      "title": "Run a repeatable test suite",
+      "url": "https://snowch.github.io/python-foundry/?lesson=unittest",
+      "decision": "Keep prose / worked evidence",
+      "passage": "unittest is Python’s standard-library test framework. FunctionTestCase adapts an ordinary test function into a test case, and TestSuite groups cases for a runner. TextTestRunner writes a test report to the message stream. The final passed field is printed by this program and states whether the suite succeeded. A test failure is evidence about the code, not an unavailable Python runtime.",
+      "starter_sha256": "d498e6bbb1556c167bcbdbf67ee2cb490dc4a07bf4b1f961f867d307aa5c0fd1",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "local-modules",
+      "title": "Import your own module",
+      "url": "https://snowch.github.io/python-foundry/?lesson=local-modules",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A module is a Python file that can be imported. The editor has two editable tabs: main.py runs first, and totals.py supplies add. Both files are prepared automatically for each run. from totals import add makes that function available to main.py. Select totals.py before making the requested edit. The runner reloads local modules for each run, so an earlier import does not hide your change.",
+      "starter_sha256": "b448f343c4399bbb2982fa0673816cba3f93cd15fec30cdb787acf1e56f41469",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "main-guard",
+      "title": "Choose an entry point without running on import",
+      "url": "https://snowch.github.io/python-foundry/?lesson=main-guard",
+      "decision": "Keep prose / worked evidence",
+      "passage": "Python sets __name__ to \"__main__\" for the entry script. When another file imports a module, __name__ is that module’s import name instead. A main guard lets imports obtain functions without also running the script’s demonstration or command-line workflow. main() is an ordinary function name; the guard is what controls the call.",
+      "starter_sha256": "dd90c5f405938f10cc802918e0f71912608933f397162b813663e2108e44c863",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "arguments-cli",
+      "title": "Parse command-line arguments",
+      "url": "https://snowch.github.io/python-foundry/?lesson=arguments-cli",
+      "decision": "Keep prose / worked evidence",
+      "passage": "argparse is a standard-library parser for command-line arguments. The Arguments field is already prepared as [\"--count\", \"3\"]. The browser passes those two strings after the entry filename in sys.argv. type=int asks argparse to convert the option’s value. This editor models command-line arguments; it does not start a host terminal or install a program on your device.",
+      "starter_sha256": "062e5b36cfaa3339a64ac2fbe7812a6297af0a78415f0d8c3225c29e05b31b0b",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "environments",
+      "title": "Identify the Python environment",
+      "url": "https://snowch.github.io/python-foundry/?lesson=environments",
+      "decision": "Keep prose / worked evidence",
+      "passage": "An environment combines a Python interpreter with the packages available to it. sys.prefix identifies the current environment; sys.base_prefix identifies the base installation used to create a desktop virtual environment. The browser uses a prepared WebAssembly build of Python, not a desktop virtual environment. The editable program inspects that environment. The separate terminal commands below create a virtual environment on your computer; do not paste them into the Python editor.",
+      "starter_sha256": "1b7898eb4f70586700392f15931dea334bfbe3c8ddbb26938679db45584d4ee1",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "project-metadata",
+      "title": "Read project metadata from TOML",
+      "url": "https://snowch.github.io/python-foundry/?lesson=project-metadata",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A pyproject.toml file can describe a distribution: the project installed by a packaging tool. An import name identifies a Python module. A distribution’s name and its import name do not have to be identical. The prepared pyproject.toml is read-only setup for this example. tomllib, included in modern Python, reads the TOML text. Building and installing the project are desktop steps shown separately; Run code only inspects the metadata.",
+      "starter_sha256": "9307eb6263672234a7b6f87f6412eb10fcfd52b3535f13082ec2cb3cf7955bf3",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "type-hints",
+      "title": "Describe a function’s input and output types",
+      "url": "https://snowch.github.io/python-foundry/?lesson=type-hints",
+      "decision": "Keep prose / worked evidence",
+      "passage": "Type annotations document expected types and help external type-checking tools. list[int] describes a list whose items are integers, and -> int describes an integer return value. Python does not generally enforce these annotations at runtime. A type checker is a separate tool. Keep runtime validation when an input contract needs to be enforced while the program runs.",
+      "starter_sha256": "b7166a59f4678121aeeadb5467425f7045bb1ccc1c33cfa337640250647cba3a",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "classes",
+      "title": "Create two independent objects",
+      "url": "https://snowch.github.io/python-foundry/?lesson=classes",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A class defines how to create objects with related data and behaviour. __init__ initializes a new instance. self refers to the instance receiving the method call. Assignments to self.name store data on that instance. Two Person objects can share the same class definition while keeping different names.",
+      "starter_sha256": "bc39aa1495e5b0e2f162e59aa661011fb6f2a023ecb240c8475e701cbacb6de8",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "dataclasses",
+      "title": "Declare a small data record",
+      "url": "https://snowch.github.io/python-foundry/?lesson=dataclasses",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A dataclass describes a record with named fields. The @dataclass decorator asks Python to generate methods such as initialization, a readable representation and value-based equality. The field annotations describe the record; they do not automatically validate every assigned value. Use a frozen dataclass when rebinding fields should be disallowed, while remembering that nested mutable values need their own design.",
+      "starter_sha256": "e22db9e4b5fe922bb89f284d1c579364e485b9f84fae4cf85f686f9fcf78cad9",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "methods",
+      "title": "Keep an invariant inside a method",
+      "url": "https://snowch.github.io/python-foundry/?lesson=methods",
+      "decision": "Keep prose / worked evidence",
+      "passage": "An invariant is a condition that an object is intended to maintain. The Counter method rejects a negative amount before changing the stored value. self.value += amount adds amount to the current value and stores the result on the same attribute. A method can combine validation with mutation so callers use one operation. Python’s ordinary attributes are still accessible; this example teaches a convention and a contract, not an impenetrable security boundary.",
+      "starter_sha256": "bb1ee6eb1c8c69297be7a61c529aba32fc55c60a82605cc498832d7a1431e551",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "properties",
+      "title": "Calculate an attribute from stored state",
+      "url": "https://snowch.github.io/python-foundry/?lesson=properties",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A property lets a method be read using attribute syntax. The area property computes width * height each time it is read. Because area is derived rather than stored separately, changing width cannot leave an old saved area behind. Properties are useful for a stable interface; avoid hiding unexpectedly expensive work in a simple-looking attribute.",
+      "starter_sha256": "a1a7fc52bddae94db24888ea15bbefd01270cbf66110761e6e34df4b00cb306d",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "composition",
+      "title": "Build behaviour by combining objects",
+      "url": "https://snowch.github.io/python-foundry/?lesson=composition",
+      "decision": "Keep prose / worked evidence",
+      "passage": "Composition means an object uses another object to do part of its work. Reporter receives a formatter, so its report method does not need to hard-code one formatting policy. Passing the collaborator at construction makes alternatives easy to test. Inheritance can also share or specialize behaviour, but an is-a relationship should fit the model before choosing a class hierarchy.",
+      "starter_sha256": "175d22d5daa25aec56f93f22be7da9e57a1b1ec00afd10050dac3bb483994980",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "protocols",
+      "title": "Describe behaviour without requiring a base class",
+      "url": "https://snowch.github.io/python-foundry/?lesson=protocols",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A typing.Protocol describes the operations a caller needs. A type checker can accept an object that supplies those operations even when its class does not inherit from the protocol. This is structural typing: compatibility depends on the available shape of the interface. The program still runs ordinary Python method calls; annotations do not install runtime checks automatically.",
+      "starter_sha256": "24490519f6055cfdf5dd1f29fa7b3a1992580bd974c64f55074baebacda4df4c",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "inheritance",
+      "title": "Override behaviour in a subclass",
+      "url": "https://snowch.github.io/python-foundry/?lesson=inheritance",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A subclass inherits attributes and methods from a base class. Override a method when the new type should provide a different implementation of that operation. super().__init__(name) calls the next initializer in the method-resolution order. In this single-base example it initializes Person’s name. Prefer composition when the relationship is uses-a rather than is-a.",
+      "starter_sha256": "d51449d0de055ebd56756ba759370abb1611d39cbefb1c05c88d42078b642b28",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "custom-exceptions",
+      "title": "Give a domain failure its own exception type",
+      "url": "https://snowch.github.io/python-foundry/?lesson=custom-exceptions",
+      "decision": "Keep prose / worked evidence",
+      "passage": "An application can define its own exception class by inheriting from Exception or a suitable built-in exception. A dedicated type lets a caller distinguish that failure from other errors. InsufficientStock inherits ValueError here. The caller catches InsufficientStock specifically, so a different programming error is not silently translated into an out-of-stock message.",
+      "starter_sha256": "7cbf29babb8861f137bcc71fdb82ab8abd7235196c889790e28bdab20022c3fd",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "special-methods",
+      "title": "Implement the len protocol",
+      "url": "https://snowch.github.io/python-foundry/?lesson=special-methods",
+      "decision": "Keep prose / worked evidence",
+      "passage": "Python’s built-ins use documented protocols. len(value) asks an object for its length through __len__. Defining that method lets a custom collection support the same operation. Special methods should obey their protocol’s contract. __len__ must return a nonnegative integer. Do not add unrelated work merely because a caller asks for a length.",
+      "starter_sha256": "2689cada27195cc61093e80ff999110f47ffbe46498f35ddfb481d54eb067812",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "lambda",
+      "title": "Choose a small function as a sort key",
+      "url": "https://snowch.github.io/python-foundry/?lesson=lambda",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A lambda creates a function from one expression. In lambda row: row[1], row is the parameter and row[1] is the returned value. The sort key controls comparison, not the shape of the returned records. A named def is usually clearer when the calculation needs several steps, validation or documentation.",
+      "starter_sha256": "c15857ccaa990679be98904377932c15c16631fa4f7c1fc8d598e52c26145b87",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "dictionary-comprehensions",
+      "title": "Transform dictionary entries into a new mapping",
+      "url": "https://snowch.github.io/python-foundry/?lesson=dictionary-comprehensions",
+      "decision": "Keep prose / worked evidence",
+      "passage": "dictionary.items() produces key-value pairs for iteration. A dictionary comprehension builds a new mapping using a key expression and a value expression separated by a colon. The source mapping remains unchanged. Each generated key must be hashable, and a repeated generated key replaces an earlier value; do not assume a transformation preserves distinct keys unless the rule ensures it.",
+      "starter_sha256": "aff6982568485d4921d03de5447ffb9627ef5cb5a710cfbcaeaaee65eafeee46",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "unpacking",
+      "title": "Collect and expand positional arguments",
+      "url": "https://snowch.github.io/python-foundry/?lesson=unpacking",
+      "decision": "Keep prose / worked evidence",
+      "passage": "In a function definition, *values collects extra positional arguments into a tuple. In a call, *numbers expands a sequence into separate positional arguments. These are related but opposite operations. The function below receives the same three values whether the caller writes them separately or expands one list.",
+      "starter_sha256": "4be676249bb341feb102ea691e74dbe87b893e5dc2520f9cb4854ff529a75bb3",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "pattern-matching",
+      "title": "Match the structure of a command",
+      "url": "https://snowch.github.io/python-foundry/?lesson=pattern-matching",
+      "decision": "Keep prose / worked evidence",
+      "passage": "match compares a value with case patterns. The tuple pattern (\"add\", value) requires two items, the first equal to \"add\", and binds the second item to value. The wildcard _ catches remaining shapes. Patterns can bind names, so a bare name is not a general constant comparison. Use literal strings or qualified constants when a case must match a fixed value.",
+      "starter_sha256": "0cb468699503519715d07d931a360cb1e4df04966323632ea5ed145c1e137694",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "copying",
+      "title": "Distinguish a shared object from a shallow copy",
+      "url": "https://snowch.github.io/python-foundry/?lesson=copying",
+      "decision": "Revised",
+      "passage": "Assigning one list name to another does not copy the list. Both names refer to the same mutable object. list.copy creates a new outer list. A shallow copy still shares nested objects. Use a deliberately nested example when deciding whether copy.deepcopy is needed; copying every object can also be expensive or inappropriate.",
+      "starter_sha256": "e38f4461650c744f2b5e7bb657598161c99bc7a935cd8701cc85c0b0994d5476",
+      "question": "Why does alias.append(3) change original but leave copy unchanged?",
+      "design": {
+        "title": "Two names can reach one list",
+        "question": "Why does alias.append(3) change original but leave copy unchanged?",
+        "kind": "references",
+        "states": [
+          {
+            "label": "Before append",
+            "objects": [
+              {
+                "label": "List A",
+                "value": "[1, 2]",
+                "refs": [
+                  {
+                    "name": "original",
+                    "edge": "refers to A"
+                  },
+                  {
+                    "name": "alias",
+                    "edge": "refers to A"
+                  }
+                ]
+              },
+              {
+                "label": "List B",
+                "value": "[1, 2]",
+                "refs": [
+                  {
+                    "name": "copy",
+                    "edge": "refers to B"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "label": "After alias.append(3)",
+            "objects": [
+              {
+                "label": "Same list A",
+                "value": "[1, 2, 3]",
+                "refs": [
+                  {
+                    "name": "original",
+                    "edge": "still A"
+                  },
+                  {
+                    "name": "alias",
+                    "edge": "still A"
+                  }
+                ]
+              },
+              {
+                "label": "Same list B",
+                "value": "[1, 2]",
+                "refs": [
+                  {
+                    "name": "copy",
+                    "edge": "unchanged"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "note": "The printed lists differ, while original is alias is True. list.copy creates a separate outer list; it is a shallow copy, not a recursive copy of nested objects.",
+        "description": "Why does alias.append(3) change original but leave copy unchanged? Before append: List A contains [1, 2]. original refers to A List A; alias refers to A List A; List B contains [1, 2]. copy refers to B List B. After alias.append(3): Same list A contains [1, 2, 3]. original still A Same list A; alias still A Same list A; Same list B contains [1, 2]. copy unchanged Same list B. The printed lists differ, while original is alias is True. list.copy creates a separate outer list; it is a shallow copy, not a recursive copy of nested objects."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "mutable-defaults",
+      "title": "Avoid sharing a default list between calls",
+      "url": "https://snowch.github.io/python-foundry/?lesson=mutable-defaults",
+      "decision": "Added",
+      "passage": "Default expressions are evaluated once when a function is defined. A list used as a default can therefore accumulate changes across otherwise separate calls. Use None as a sentinel and create a new list inside the function when no list was supplied. The test prints two call results so accidental sharing is visible.",
+      "starter_sha256": "165694a3c46dbaba26f6e6bd0fd6334032029fb53800f69bcd4fce135bf0b092",
+      "question": "Why do the calls print [a] and [b] rather than one accumulating list?",
+      "design": {
+        "title": "Each omitted argument gets a fresh list here",
+        "question": "Why do the calls print [a] and [b] rather than one accumulating list?",
+        "kind": "references",
+        "states": [
+          {
+            "label": "Two calls with items=None",
+            "objects": [
+              {
+                "label": "First call’s new list",
+                "value": "['a']",
+                "refs": [
+                  {
+                    "name": "add_item(a)",
+                    "edge": "creates inside the function"
+                  }
+                ]
+              },
+              {
+                "label": "Second call’s new list",
+                "value": "['b']",
+                "refs": [
+                  {
+                    "name": "add_item(b)",
+                    "edge": "creates another list"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "note": "The default None is evaluated at definition time. items=[] runs separately inside each call. Using [] as the default would share one list across calls; that is a contrasting edit, not this starter.",
+        "description": "Why do the calls print [a] and [b] rather than one accumulating list? Two calls with items=None: First call’s new list contains ['a']. add_item(a) creates inside the function First call’s new list; Second call’s new list contains ['b']. add_item(b) creates another list Second call’s new list. The default None is evaluated at definition time. items=[] runs separately inside each call. Using [] as the default would share one list across calls; that is a contrasting edit, not this starter."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "iterators",
+      "title": "Consume an iterator one item at a time",
+      "url": "https://snowch.github.io/python-foundry/?lesson=iterators",
+      "decision": "Added",
+      "passage": "iter creates an iterator over an iterable, and next asks that iterator for its next item. An iterator keeps a position as it is consumed. list(iterator) consumes all remaining items. Applying list to the same exhausted iterator again produces an empty list. To start over, obtain a new iterator from the original collection.",
+      "starter_sha256": "3eae23efbe23d858d70b5d9dc5192707f0d841c9712e6bc7ab5bf32e5b493f4f",
+      "question": "Where did 2 go when list(iterator) prints [4,6]?",
+      "design": {
+        "title": "Consumption advances one iterator",
+        "question": "Where did 2 go when list(iterator) prints [4,6]?",
+        "kind": "slots",
+        "rows": [
+          {
+            "label": "Before next(iterator)",
+            "values": [
+              2,
+              4,
+              6
+            ],
+            "note": "Next position is index 0.",
+            "active": [
+              0
+            ],
+            "muted": []
+          },
+          {
+            "label": "After next returns 2",
+            "values": [
+              2,
+              4,
+              6
+            ],
+            "note": "list(iterator) consumes only remaining values 4 and 6.",
+            "active": [
+              1,
+              2
+            ],
+            "muted": [
+              0
+            ]
+          },
+          {
+            "label": "After list(iterator)",
+            "values": [
+              2,
+              4,
+              6
+            ],
+            "note": "Iterator exhausted: another list(iterator) returns [].",
+            "active": [],
+            "muted": [
+              0,
+              1,
+              2
+            ]
+          }
+        ],
+        "note": "The original list stays [2,4,6]. The iterator’s position changes; consuming it does not remove list elements.",
+        "description": "Where did 2 go when list(iterator) prints [4,6]? Before next(iterator): index 0 = 2, index 1 = 4, index 2 = 6. Next position is index 0.. After next returns 2: index 0 = 2, index 1 = 4, index 2 = 6. list(iterator) consumes only remaining values 4 and 6.. After list(iterator): index 0 = 2, index 1 = 4, index 2 = 6. Iterator exhausted: another list(iterator) returns [].. The original list stays [2,4,6]. The iterator’s position changes; consuming it does not remove list elements."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "generators",
+      "title": "Yield values without building the whole result",
+      "url": "https://snowch.github.io/python-foundry/?lesson=generators",
+      "decision": "Added",
+      "passage": "A function containing yield creates a generator iterator. Calling the function does not run its entire body immediately. Each next request resumes the body until its next yield. A generator can process inputs incrementally instead of storing every output at once. It can still retain its inputs or other large state, so laziness alone does not prove low memory use.",
+      "starter_sha256": "9ccd90e807056c566aa8b193358835f7ace5df848dfcce784bf0944bc34235b4",
+      "question": "Why does next(result) return 4 before list(result) returns [9,16]?",
+      "design": {
+        "title": "yield suspends a calculation with state retained",
+        "question": "Why does next(result) return 4 before list(result) returns [9,16]?",
+        "kind": "table",
+        "headings": [
+          "Request",
+          "Generator work",
+          "Returned evidence"
+        ],
+        "rows": [
+          [
+            "Create generator",
+            "Body has not iterated yet",
+            "No square calculated"
+          ],
+          [
+            "next(result)",
+            "Visit 2; yield 2*2; suspend",
+            "4"
+          ],
+          [
+            "list(result)",
+            "Resume with 3, then 4; finish",
+            "[9,16]"
+          ]
+        ],
+        "label": "",
+        "links": [],
+        "note": "The generator resumes where it suspended. It does not rebuild the already yielded 4 or construct all three squares at creation.",
+        "description": "Why does next(result) return 4 before list(result) returns [9,16]? Request; Generator work; Returned evidence. Create generator; Body has not iterated yet; No square calculated; next(result); Visit 2; yield 2*2; suspend; 4; list(result); Resume with 3, then 4; finish; [9,16]. . . The generator resumes where it suspended. It does not rebuild the already yielded 4 or construct all three squares at creation."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "decorators",
+      "title": "Wrap a function while preserving its result",
+      "url": "https://snowch.github.io/python-foundry/?lesson=decorators",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A decorator receives a function and returns the callable used in its place. The @trace syntax applies trace when the decorated function is defined. The wrapper below prints before calling the original function, then returns its result. functools.wraps copies useful metadata such as the original function’s name for inspection and debugging.",
+      "starter_sha256": "12bace596b158175eb6bcb4134e4484e05e36036cef27b67aed7230675199aa5",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "context-managers",
+      "title": "Guarantee cleanup with a context manager",
+      "url": "https://snowch.github.io/python-foundry/?lesson=context-managers",
+      "decision": "Added",
+      "passage": "contextlib.contextmanager turns a generator function into a context manager for with. Code before yield prepares the resource; the yielded value becomes the as target. A finally block runs when the with body finishes or raises. The example prints the event order so you can distinguish resource preparation, use and cleanup.",
+      "starter_sha256": "16f9164825b76a57c1df9cceda9df6c5ba8a0aed808459f92936cfcdb1df92f8",
+      "question": "Why does close print even when the with body raises?",
+      "design": {
+        "title": "Cleanup surrounds the with body",
+        "question": "Why does close print even when the with body raises?",
+        "kind": "flow",
+        "steps": [
+          {
+            "label": "Enter resource",
+            "detail": "Print open; yield ready."
+          },
+          {
+            "label": "Run with body",
+            "detail": "value is ready; the starter prints ready."
+          },
+          {
+            "label": "Leave with body",
+            "detail": "Normal exit or an exception resumes cleanup."
+          },
+          {
+            "label": "finally",
+            "detail": "Print close."
+          }
+        ],
+        "note": "The unchanged starter uses normal exit. The finally cleanup also runs on exception exit; process termination is outside this demonstration.",
+        "description": "Why does close print even when the with body raises? Enter resource. Print open; yield ready.; Run with body. value is ready; the starter prints ready.; Leave with body. Normal exit or an exception resumes cleanup.; finally. Print close.. The unchanged starter uses normal exit. The finally cleanup also runs on exception exit; process termination is outside this demonstration."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "logging",
+      "title": "Separate diagnostic messages from returned values",
+      "url": "https://snowch.github.io/python-foundry/?lesson=logging",
+      "decision": "Keep prose / worked evidence",
+      "passage": "Logging records diagnostic events with severity levels. DEBUG is more detailed than INFO; a configured threshold filters lower-severity messages. The program’s result is printed to Console. Logging is sent to Test and diagnostic messages so you can inspect it separately. force=True makes this run’s configuration explicit rather than relying on earlier runtime state.",
+      "starter_sha256": "c7538a87a84f73ca2dc960e8a8bdb7627bbc4607ade5227591d570c2ab25fd8c",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "configuration",
+      "title": "Combine defaults with a configuration file",
+      "url": "https://snowch.github.io/python-foundry/?lesson=configuration",
+      "decision": "Keep prose / worked evidence",
+      "passage": "Configuration separates a program’s policy from its code. The prepared config.json overrides the default limit while leaving unspecified defaults in place. The dictionary union operator | creates a new dictionary. For a repeated key, the right-hand dictionary wins. This explicit order is easier to inspect than scattered assignments throughout a program.",
+      "starter_sha256": "b2fc04503e6cbe79feb8e02d08d712204e74b1538ff86f4015ce35ae84b2858e",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "sqlite-queries",
+      "title": "Query records with SQLite",
+      "url": "https://snowch.github.io/python-foundry/?lesson=sqlite-queries",
+      "decision": "Keep prose / worked evidence",
+      "passage": "sqlite3 is Python’s interface to the SQLite database engine. This example opens an in-memory database, creates a table and inserts two rows automatically on every run. execute runs a SQL statement. fetchall returns matching rows as a Python list of tuples. ORDER BY gives a defined result order; without it, do not treat a returned order as a sorting guarantee.",
+      "starter_sha256": "f4907b844ab4802b8be7d613f1c5663cf010ca5def6a3adacce923242913d019",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "sql-parameters",
+      "title": "Pass query values as parameters",
+      "url": "https://snowch.github.io/python-foundry/?lesson=sql-parameters",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A ? placeholder marks a value supplied separately to SQLite. The tuple of parameters contains the user’s data; it is not pasted into the SQL statement. Parameter binding handles quotes as data. Constructing SQL by joining untrusted text can change the query’s meaning. Placeholders bind values, not table or column names; choose identifiers from an allowed set when a program needs them.",
+      "starter_sha256": "b0b83f982fb847292e3daddf207a137d411d25434ce5f29b32d781c3c7efcdab",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "transactions",
+      "title": "Commit or roll back a group of changes",
+      "url": "https://snowch.github.io/python-foundry/?lesson=transactions",
+      "decision": "Revised",
+      "passage": "A transaction groups database changes. The sqlite3 connection context manager commits on a successful exit and rolls back when an exception leaves its block. The connection’s context manager does not close the connection. This example closes it explicitly after inspecting the result. Each run prepares a new in-memory database, so a rollback does not affect another lesson’s data.",
+      "starter_sha256": "27aeb981b796c89049904f3b6baeb868b82f9075a101b25e8d0f959e4a3bf693",
+      "question": "Why is the final row count 0 in the unchanged program?",
+      "design": {
+        "title": "A normal exit and an exception choose different outcomes",
+        "question": "Why is the final row count 0 in the unchanged program?",
+        "kind": "branch",
+        "root": "Insert one row inside the transaction",
+        "paths": [
+          {
+            "when": "Normal block exit · comparison case",
+            "result": "Commit → count 1",
+            "detail": ""
+          },
+          {
+            "when": "ValueError · unchanged starter",
+            "result": "Rollback → count 0",
+            "detail": ""
+          }
+        ],
+        "join": "Query the row count after leaving the block",
+        "note": "The starter deliberately raises ValueError. The normal-exit branch is a comparison, not another action performed by that run.",
+        "description": "Why is the final row count 0 in the unchanged program? Insert one row inside the transaction. Normal block exit · comparison case. Commit → count 1. ; ValueError · unchanged starter. Rollback → count 0. . Query the row count after leaving the block. The starter deliberately raises ValueError. The normal-exit branch is a comparison, not another action performed by that run."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "test-doubles",
+      "title": "Replace a collaborator in a test",
+      "url": "https://snowch.github.io/python-foundry/?lesson=test-doubles",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A test double supplies controlled behaviour in place of a dependency. unittest.mock.Mock can return a known value and record how it was called. The example passes a loader into total instead of contacting a network service. This makes the test repeatable offline and checks both the returned total and whether the collaborator was used.",
+      "starter_sha256": "ad68b5a3b8f125de4de86f164930d22bd650343a4e52b025069b4f2cbd5b454f",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "async-await",
+      "title": "Suspend and resume a coroutine",
+      "url": "https://snowch.github.io/python-foundry/?lesson=async-await",
+      "decision": "Keep prose / worked evidence",
+      "passage": "async def defines a coroutine function. Calling it creates a coroutine; awaiting that coroutine executes it and obtains its result. await can suspend the current coroutine while another operation makes progress. The browser editor supports the final top-level await shown here. Export project creates a desktop main.py that calls asyncio.run(main()) instead. A notebook also supports top-level await. The zero-second sleep yields control; it is not a measurement of network or CPU performance.",
+      "starter_sha256": "7450a60a33cb36c78744e8e54800d581e4aa31db130059cc4324829bff91f736",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "async-gather",
+      "title": "Coordinate two async operations",
+      "url": "https://snowch.github.io/python-foundry/?lesson=async-gather",
+      "decision": "Revised",
+      "passage": "asyncio.gather schedules awaitable operations together and returns their results in argument order. The trace below records starts and finishes around a suspension point. These tasks share one event loop. Their interleaving is concurrency, not proof that Python computations ran on separate CPU cores. Threads and processes have different execution and platform constraints; this browser workbench does not launch desktop processes.",
+      "starter_sha256": "45a26655ea260baf77296a731a29945e86a1748c513c7bf102a384174c36ca77",
+      "question": "How can b start before a finishes while results remain [A,B]?",
+      "design": {
+        "title": "Two coroutines yield independently",
+        "question": "How can b start before a finishes while results remain [A,B]?",
+        "kind": "table",
+        "headings": [
+          "Participant",
+          "Start and suspend",
+          "Resume and finish"
+        ],
+        "rows": [
+          [
+            "Task a",
+            "print start a; await sleep(0)",
+            "print finish a; return A"
+          ],
+          [
+            "Task b",
+            "print start b; await sleep(0)",
+            "print finish b; return B"
+          ],
+          [
+            "gather",
+            "Schedules the two calls",
+            "Returns [A,B] in call order"
+          ]
+        ],
+        "label": "Dependencies, not a proportional time axis",
+        "links": [
+          "Each await permits the event loop to run another ready task.",
+          "Result slot 0 belongs to call a; slot 1 belongs to call b, independently of completion order."
+        ],
+        "note": "The unchanged starter prints start a, start b, finish a, finish b. This illustrates cooperative scheduling, not measured timings or CPU parallelism.",
+        "description": "How can b start before a finishes while results remain [A,B]? Participant; Start and suspend; Resume and finish. Task a; print start a; await sleep(0); print finish a; return A; Task b; print start b; await sleep(0); print finish b; return B; gather; Schedules the two calls; Returns [A,B] in call order. Dependencies, not a proportional time axis. Each await permits the event loop to run another ready task.; Result slot 0 belongs to call a; slot 1 belongs to call b, independently of completion order.. The unchanged starter prints start a, start b, finish a, finish b. This illustrates cooperative scheduling, not measured timings or CPU parallelism."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "async-cancel",
+      "title": "Cancel a task and observe cleanup",
+      "url": "https://snowch.github.io/python-foundry/?lesson=async-cancel",
+      "decision": "Added",
+      "passage": "create_task schedules a coroutine. cancel requests cancellation, delivered at an await point. A finally block still provides cleanup when the task has begun executing. The first sleep in main lets work reach its await before cancellation. main then awaits the cancelled task and catches CancelledError, keeping cancellation distinct from successful completion.",
+      "starter_sha256": "ea3133a557841e97b2cf9135cdac06537f74b7b2d07ea3f089816eb690bfd630",
+      "question": "Why does cleanup print before cancelled?",
+      "design": {
+        "title": "Request cancellation, then await cleanup",
+        "question": "Why does cleanup print before cancelled?",
+        "kind": "table",
+        "headings": [
+          "Order",
+          "main task",
+          "work task"
+        ],
+        "rows": [
+          [
+            "1",
+            "create_task; await sleep(0)",
+            "Starts and awaits sleep(10)"
+          ],
+          [
+            "2",
+            "task.cancel()",
+            "Cancellation requested at an await"
+          ],
+          [
+            "3",
+            "await task",
+            "finally prints cleanup"
+          ],
+          [
+            "4",
+            "catch CancelledError; print cancelled",
+            "Task has finished"
+          ]
+        ],
+        "label": "Completion dependencies, not measured time",
+        "links": [],
+        "note": "cancel requests cancellation; awaiting observes completion. The initial yield lets work begin, so its finally block is active before cancellation.",
+        "description": "Why does cleanup print before cancelled? Order; main task; work task. 1; create_task; await sleep(0); Starts and awaits sleep(10); 2; task.cancel(); Cancellation requested at an await; 3; await task; finally prints cleanup; 4; catch CancelledError; print cancelled; Task has finished. Completion dependencies, not measured time. . cancel requests cancellation; awaiting observes completion. The initial yield lets work begin, so its finally block is active before cancellation."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "algorithmic-cost",
+      "title": "Count work before comparing speed",
+      "url": "https://snowch.github.io/python-foundry/?lesson=algorithmic-cost",
+      "decision": "Keep prose / worked evidence",
+      "passage": "An operation count can explain how a chosen algorithm scales with input size. This example counts pairs examined by two nested loops; it does not measure elapsed time. Doubling the list length multiplies the pair count by four. That relationship describes this algorithm’s counted work. Real execution time also depends on implementation, device and other activity.",
+      "starter_sha256": "3d08c0eb6711d349d87871a7aafd12f296b6ce5c8e7fc7c90c48e632603c6cd1",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "timing",
+      "title": "Measure elapsed time without a speed claim",
+      "url": "https://snowch.github.io/python-foundry/?lesson=timing",
+      "decision": "Keep prose / worked evidence",
+      "passage": "time.perf_counter reads a clock suitable for elapsed-time intervals. Subtract the start reading from the end reading around the operation you intend to measure. This program prints whether the elapsed interval is nonnegative, not a fixed timing target. A single run cannot establish that one implementation is faster. For a real comparison, use repeated runs with the same inputs and inspect variability; timeit automates repeated timing.",
+      "starter_sha256": "22efad0c409bcc9fb5ac1eca328aec38110abe7cf508917d7f831d3c938e0897",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "caching",
+      "title": "Reuse a result for the same arguments",
+      "url": "https://snowch.github.io/python-foundry/?lesson=caching",
+      "decision": "Keep prose / worked evidence",
+      "passage": "functools.lru_cache saves return values by argument. A later call with the same arguments can return the saved value without executing the function body again. Caching is appropriate when equal arguments should produce a reusable result and the saved objects are suitable to share. It can give stale or incorrect behaviour when a function depends on changing external state or returns mutable objects that callers alter.",
+      "starter_sha256": "19ffedd5b5a178c2bff566484286e5f524eac4df09698e0edc0b1101ff89fbe6",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "project-text",
+      "title": "Project: count words in a prepared file",
+      "url": "https://snowch.github.io/python-foundry/?lesson=project-text",
+      "decision": "Keep prose / worked evidence",
+      "passage": "The page prepares notes.txt automatically. The program normalizes each whitespace-separated word, counts occurrences and prints keys in sorted order. Punctuation is deliberately outside this small tokenizer’s contract. The output file summary.json records the same counts. Use Generated files to inspect or download it. A new run starts again from notes.txt, so changing the code cannot silently reuse an earlier summary.",
+      "starter_sha256": "a300eccdfcab2ad8e18e64c091916378ef78fad9953d971398dfac2e75d84211",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "project-ledger",
+      "title": "Project: total a CSV ledger exactly",
+      "url": "https://snowch.github.io/python-foundry/?lesson=project-ledger",
+      "decision": "Keep prose / worked evidence",
+      "passage": "The prepared sales.csv has a header and three decimal amounts. csv.DictReader names each field; Decimal parses each amount from its decimal text. The starter totals all rows and writes ledger.txt. Changing the filter changes which records contribute. Keep the header handling and the Decimal conversion rather than treating this file as a list of plain numbers.",
+      "starter_sha256": "7230fc28877b4a08db59a89b4d560d17610a55193cc5053ccc4d90fa1fe07349",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "project-inventory",
+      "title": "Project: separate an inventory model from its entry file",
+      "url": "https://snowch.github.io/python-foundry/?lesson=project-inventory",
+      "decision": "Keep prose / worked evidence",
+      "passage": "The editor prepares main.py and inventory.py as editable files, plus stock.json as read-only input. main.py loads the records; inventory.py validates and totals them. any(condition for record in records) tests records one at a time and returns True if any condition is true; here it rejects a negative count. Select inventory.py to edit the return expression below, then return to main.py if you want to trace the caller. Run code always starts at main.py and reloads both editable files.",
+      "starter_sha256": "8d50ed40ff74e4e4926db2c5e6327998b91650b6b52e75d6bad776ebcda82195",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "project-cli",
+      "title": "Project: build a small command-line report",
+      "url": "https://snowch.github.io/python-foundry/?lesson=project-cli",
+      "decision": "Keep prose / worked evidence",
+      "passage": "The prepared arguments name readings.json and report.txt. The entry file parses those options, loads the prepared readings and calls the summary function from report.py. The program prints the report and saves the same text to its output file. Export project downloads both source files and the fixture. Its README gives the equivalent desktop command.",
+      "starter_sha256": "438a67b5ea1f3cb1096bd6313cda0ba4da8cb5cb530e305cca3b87b2bb4f4ac9",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "project-sqlite",
+      "title": "Project: query a catalog and export matching rows",
+      "url": "https://snowch.github.io/python-foundry/?lesson=project-sqlite",
+      "decision": "Keep prose / worked evidence",
+      "passage": "The example creates a small SQLite catalog automatically for each run. It queries records costing no more than a parameterized limit, orders them by name and exports the result as JSON. The example uses an in-memory database, while catalog.json is a downloadable output file. For a desktop application that must retain database changes between runs, use a file-backed connection and define its transaction and backup policy.",
+      "starter_sha256": "fefa533356e60f4f6f46c27e402d282ef01ff4e3948873290f1cfc6f66d17dd0",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "project-async",
+      "title": "Project: coordinate independent data transformations",
+      "url": "https://snowch.github.io/python-foundry/?lesson=project-async",
+      "decision": "Keep prose / worked evidence",
+      "passage": "The prepared inputs are three integers. Each coroutine yields control once and then returns its square; gather collects the results and the program sums them. The star before the generator expression expands its coroutines into separate gather arguments; it does not multiply them. These are controlled local tasks, not HTTP requests or CPU-parallel workers. Replacing the small transformation with real I/O would require a dependency with async support, bounded concurrency, timeouts and a defined error policy.",
+      "starter_sha256": "2e6d6970e572c89a922d6d00688c3efe65e07bd8160067a59cf35ee8874dcf2b",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "dsa-cost",
+      "title": "Separate input size, work and extra space",
+      "url": "https://snowch.github.io/python-foundry/?lesson=dsa-cost",
+      "decision": "Keep prose / worked evidence",
+      "passage": "Big O describes a bound on growth as input size n increases. A full scan performs n visits, so its time is O(n). Comparing every distinct pair performs n(n−1)/2 comparisons, giving O(n²) time. These counts are not measured milliseconds. Auxiliary space counts additional storage beyond the input. The pair counter below keeps only counters, so it uses O(1) auxiliary space despite quadratic work. Changing n changes work; it does not add a stored list of all pairs.",
+      "starter_sha256": "4be90ef7ce12f3acc76ef69cbce1f65323bfec0e778b964ff2b9a186678640a4",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "dsa-linear-search",
+      "title": "Stop a linear search when the answer is found",
+      "url": "https://snowch.github.io/python-foundry/?lesson=dsa-linear-search",
+      "decision": "Keep prose / worked evidence",
+      "passage": "Linear search inspects items in order until the target matches. The function returns the first matching index and the number of equality checks. A missing target returns None after checking the whole list. The best case takes one comparison; a missing value or a match at the end takes n comparisons. Worst-case time is O(n), and this implementation uses O(1) auxiliary space. The returned index is a position, not the matched value.",
+      "starter_sha256": "24cc737bccfe1f41e6bb1d8b78fff15319a1d2373ac1281a760749fadd47ee3f",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "dsa-binary-search",
+      "title": "Halve a sorted search interval",
+      "url": "https://snowch.github.io/python-foundry/?lesson=dsa-binary-search",
+      "decision": "Revised",
+      "passage": "Binary search requires sorted input. The interval [low, high) contains every position still eligible for the answer; high itself is excluded. Comparing the middle value discards about half that interval. This lower_bound function returns the insertion position of the first value not less than target. Verify equality separately before claiming the target exists. Search takes O(log n) comparisons and O(1) auxiliary space; sorting an unsorted input first adds its own cost.",
+      "starter_sha256": "753d7d8a76dd4a12f3308acbe0310402ef4e2136959b7017e12fc590d14da70e",
+      "question": "Why does lower bound for 4 return index 1 rather than index 2?",
+      "design": {
+        "title": "The original positions stay fixed",
+        "question": "Why does lower bound for 4 return index 1 rather than index 2?",
+        "kind": "slots",
+        "rows": [
+          {
+            "label": "[0,8)",
+            "values": [
+              2,
+              4,
+              4,
+              6,
+              8,
+              10,
+              12,
+              14
+            ],
+            "note": "8 ≥ 4 → hi=4",
+            "active": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "muted": [],
+            "tags": {
+              "4": "mid"
+            }
+          },
+          {
+            "label": "[0,4)",
+            "values": [
+              2,
+              4,
+              4,
+              6,
+              8,
+              10,
+              12,
+              14
+            ],
+            "note": "4 ≥ 4 → hi=2",
+            "active": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "muted": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "tags": {
+              "2": "mid"
+            }
+          },
+          {
+            "label": "[0,2)",
+            "values": [
+              2,
+              4,
+              4,
+              6,
+              8,
+              10,
+              12,
+              14
+            ],
+            "note": "4 ≥ 4 → hi=1",
+            "active": [
+              0,
+              1
+            ],
+            "muted": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "tags": {
+              "1": "mid"
+            }
+          },
+          {
+            "label": "[0,1)",
+            "values": [
+              2,
+              4,
+              4,
+              6,
+              8,
+              10,
+              12,
+              14
+            ],
+            "note": "2 < 4 → lo=1",
+            "active": [
+              0
+            ],
+            "muted": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "tags": {
+              "0": "mid"
+            }
+          },
+          {
+            "label": "[1,1) · stop",
+            "values": [
+              2,
+              4,
+              4,
+              6,
+              8,
+              10,
+              12,
+              14
+            ],
+            "note": "The first not-less position is 1; the equality check succeeds.",
+            "active": [],
+            "muted": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ]
+          }
+        ],
+        "note": "The input must be sorted. lo is inclusive and hi exclusive. Lower bound returns an insertion position; check bounds and equality before claiming membership.",
+        "description": "Why does lower bound for 4 return index 1 rather than index 2? [0,8): index 0 = 2, index 1 = 4, index 2 = 4, index 3 = 6, index 4 = 8, index 5 = 10, index 6 = 12, index 7 = 14. 8 ≥ 4 → hi=4. [0,4): index 0 = 2, index 1 = 4, index 2 = 4, index 3 = 6, index 4 = 8, index 5 = 10, index 6 = 12, index 7 = 14. 4 ≥ 4 → hi=2. [0,2): index 0 = 2, index 1 = 4, index 2 = 4, index 3 = 6, index 4 = 8, index 5 = 10, index 6 = 12, index 7 = 14. 4 ≥ 4 → hi=1. [0,1): index 0 = 2, index 1 = 4, index 2 = 4, index 3 = 6, index 4 = 8, index 5 = 10, index 6 = 12, index 7 = 14. 2 < 4 → lo=1. [1,1) · stop: index 0 = 2, index 1 = 4, index 2 = 4, index 3 = 6, index 4 = 8, index 5 = 10, index 6 = 12, index 7 = 14. The first not-less position is 1; the equality check succeeds.. The input must be sorted. lo is inclusive and hi exclusive. Lower bound returns an insertion position; check bounds and equality before claiming membership."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "dsa-insertion-sort",
+      "title": "Maintain a sorted prefix with insertion sort",
+      "url": "https://snowch.github.io/python-foundry/?lesson=dsa-insertion-sort",
+      "decision": "Added",
+      "passage": "Insertion sort grows a sorted prefix one item at a time. Save the next key, shift larger preceding values one place right, then put the key in the gap. The key must be saved before shifting overwrites its original slot. Shifting strictly greater values keeps equal values in their original relative order: the sort is stable. Already sorted input needs O(n) comparisons; reverse order needs O(n²) shifts. The algorithm changes the list in place with O(1) auxiliary space.",
+      "starter_sha256": "d8de5fff709f6a8110bb0d7e936ece2b5297daa2e259e7944777a17262c5a7ef",
+      "question": "Which value would be lost without the separate key?",
+      "design": {
+        "title": "Save the key while larger values move right",
+        "question": "Which value would be lost without the separate key?",
+        "kind": "slots",
+        "rows": [
+          {
+            "label": "First insertion: save key=3",
+            "values": [
+              4,
+              3,
+              2,
+              1
+            ],
+            "note": "The prefix [4] is sorted; key=3 is kept in a local variable.",
+            "active": [
+              0,
+              1
+            ],
+            "muted": []
+          },
+          {
+            "label": "Shift 4 to index 1",
+            "values": [
+              4,
+              4,
+              2,
+              1
+            ],
+            "note": "Both slots contain 4 temporarily; key still holds 3.",
+            "active": [
+              1
+            ],
+            "muted": []
+          },
+          {
+            "label": "Place key at index 0",
+            "values": [
+              3,
+              4,
+              2,
+              1
+            ],
+            "note": "The sorted prefix is now [3,4]. Repeating yields [1,2,3,4] with 6 shifts.",
+            "active": [
+              0,
+              1
+            ],
+            "muted": []
+          }
+        ],
+        "note": "A logical gap does not mean an uninitialized Python list element. The saved key preserves the value during overlapping assignments.",
+        "description": "Which value would be lost without the separate key? First insertion: save key=3: index 0 = 4, index 1 = 3, index 2 = 2, index 3 = 1. The prefix [4] is sorted; key=3 is kept in a local variable.. Shift 4 to index 1: index 0 = 4, index 1 = 4, index 2 = 2, index 3 = 1. Both slots contain 4 temporarily; key still holds 3.. Place key at index 0: index 0 = 3, index 1 = 4, index 2 = 2, index 3 = 1. The sorted prefix is now [3,4]. Repeating yields [1,2,3,4] with 6 shifts.. A logical gap does not mean an uninitialized Python list element. The saved key preserves the value during overlapping assignments."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "dsa-merge-sort",
+      "title": "Merge two sorted halves",
+      "url": "https://snowch.github.io/python-foundry/?lesson=dsa-merge-sort",
+      "decision": "Revised",
+      "passage": "Merge sort divides the list until each part contains at most one item, then merges sorted parts. During a merge, the smaller front item is the next output. Choosing the left item on equality preserves stability. There are O(log n) division levels and O(n) merging work per level, giving O(n log n) time. This list-based implementation allocates O(n) peak auxiliary storage, plus O(log n) call-stack depth. Python’s sorted is the usual application choice; this implementation exposes the mechanism.",
+      "starter_sha256": "85b0b43d9fb18e2caa97fc8cba021e42d279b4b67375ef1dc2e3d40d82fd31b2",
+      "question": "Which next value should the merge consume?",
+      "design": {
+        "title": "Two sorted fronts feed one output",
+        "question": "Which next value should the merge consume?",
+        "kind": "panels",
+        "panels": [
+          {
+            "label": "Split and sort the starter halves",
+            "model": {
+              "kind": "table",
+              "headings": [
+                "Original half",
+                "Sorted half"
+              ],
+              "rows": [
+                [
+                  "[7,2]",
+                  "[2,7]"
+                ],
+                [
+                  "[5,2]",
+                  "[2,5]"
+                ]
+              ],
+              "label": "",
+              "links": []
+            }
+          },
+          {
+            "label": "Consume the next available front",
+            "model": {
+              "kind": "table",
+              "headings": [
+                "Choice",
+                "Left remaining",
+                "Right remaining",
+                "Output"
+              ],
+              "rows": [
+                [
+                  "Left 2",
+                  "[7]",
+                  "[2,5]",
+                  "[2]"
+                ],
+                [
+                  "Right 2",
+                  "[7]",
+                  "[5]",
+                  "[2,2]"
+                ],
+                [
+                  "Right 5",
+                  "[7]",
+                  "[]",
+                  "[2,2,5]"
+                ],
+                [
+                  "Left 7",
+                  "[]",
+                  "[]",
+                  "[2,2,5,7]"
+                ]
+              ],
+              "label": "",
+              "links": []
+            }
+          }
+        ],
+        "note": "The original [7,2,5,2] remains unchanged in this implementation. Consuming the left equal value first preserves equal-key order.",
+        "description": "Which next value should the merge consume? Split and sort the starter halves. Original half; Sorted half. [7,2]; [2,7]; [5,2]; [2,5]. . ; Consume the next available front. Choice; Left remaining; Right remaining; Output. Left 2; [7]; [2,5]; [2]; Right 2; [7]; [5]; [2,2]; Right 5; [7]; []; [2,2,5]; Left 7; []; []; [2,2,5,7]. . . The original [7,2,5,2] remains unchanged in this implementation. Consuming the left equal value first preserves equal-key order."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "dsa-two-pointers",
+      "title": "Move two pointers toward a target sum",
+      "url": "https://snowch.github.io/python-foundry/?lesson=dsa-two-pointers",
+      "decision": "Added",
+      "passage": "For a sorted list, compare the sum at the two endpoints with a target. If the sum is too small, move the left endpoint right; every smaller left value would also be too small with the current right endpoint. If the sum is too large, move the right endpoint left. The pointers never move backward, so the scan takes O(n) time and O(1) auxiliary space after sorting. The function uses distinct positions even if equal values repeat. Applying the endpoint rule to unsorted input can miss an answer.",
+      "starter_sha256": "0e3168cd8896f04b30cb6052113718214a68834908b941610b8e5ac362b1b9cb",
+      "question": "Why does the starter return (1,8) immediately?",
+      "design": {
+        "title": "Endpoints choose which region to discard",
+        "question": "Why does the starter return (1,8) immediately?",
+        "kind": "slots",
+        "rows": [
+          {
+            "label": "Target 9",
+            "values": [
+              1,
+              3,
+              5,
+              8
+            ],
+            "note": "left=0, right=3: 1+8=9, so return the two values.",
+            "active": [
+              0,
+              3
+            ],
+            "muted": [],
+            "tags": {
+              "0": "left",
+              "3": "right"
+            }
+          }
+        ],
+        "note": "On a later unequal sum, sorted order justifies moving left rightward if too small, or right leftward if too large. The unchanged starter does not perform either move.",
+        "description": "Why does the starter return (1,8) immediately? Target 9: index 0 = 1, index 1 = 3, index 2 = 5, index 3 = 8. left=0, right=3: 1+8=9, so return the two values.. On a later unequal sum, sorted order justifies moving left rightward if too small, or right leftward if too large. The unchanged starter does not perform either move."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "dsa-stack",
+      "title": "Use a stack to match nested brackets",
+      "url": "https://snowch.github.io/python-foundry/?lesson=dsa-stack",
+      "decision": "Added",
+      "passage": "A stack removes the most recently added item first: last in, first out, or LIFO. A Python list supports this with append and pop at its end. Opening parentheses go onto the stack; a closing parenthesis must remove one. Reject a closing parenthesis when the stack is empty, and reject leftover openings after the scan. The algorithm takes O(n) time and O(n) worst-case auxiliary space. End-appends are amortized O(1): occasional list resizing is spread across many appends.",
+      "starter_sha256": "ff31c83aefc18c50b5b173a103709ff85b838601583924e5e52e5b0a080995da",
+      "question": "How does the stack change for (()())?",
+      "design": {
+        "title": "Only the most recent unmatched opening can close",
+        "question": "How does the stack change for (()())?",
+        "kind": "table",
+        "headings": [
+          "Input prefix",
+          "Stack · bottom → top",
+          "Action"
+        ],
+        "rows": [
+          [
+            "(",
+            "(",
+            "push"
+          ],
+          [
+            "((",
+            "( (",
+            "push"
+          ],
+          [
+            "(()",
+            "(",
+            "pop one opening"
+          ],
+          [
+            "(()(",
+            "( (",
+            "push"
+          ],
+          [
+            "(()()",
+            "(",
+            "pop"
+          ],
+          [
+            "(()())",
+            "empty",
+            "pop; balanced=True"
+          ]
+        ],
+        "label": "",
+        "links": [],
+        "note": "The starter handles parentheses only. An empty stack at a closing parenthesis rejects immediately; the final stack must also be empty.",
+        "description": "How does the stack change for (()())? Input prefix; Stack · bottom → top; Action. (; (; push; ((; ( (; push; ((); (; pop one opening; (()(; ( (; push; (()(); (; pop; (()()); empty; pop; balanced=True. . . The starter handles parentheses only. An empty stack at a closing parenthesis rejects immediately; the final stack must also be empty."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "dsa-queue",
+      "title": "Keep arrival order with a deque",
+      "url": "https://snowch.github.io/python-foundry/?lesson=dsa-queue",
+      "decision": "Added",
+      "passage": "A queue removes the oldest pending item first: first in, first out, or FIFO. collections.deque provides append at the right and popleft at the left, each approximately O(1). A list’s pop(0) shifts the remaining items and takes O(n); repeated front-removal can therefore make a queue-based algorithm quadratic. The deque below changes its pending contents as each item is processed.",
+      "starter_sha256": "6615734f859e47d47a4fdedcb44ff17fd4fde7de4ab56a0dc79adef94420439a",
+      "question": "Why does popleft return first while second and third remain?",
+      "design": {
+        "title": "Remove the oldest pending item",
+        "question": "Why does popleft return first while second and third remain?",
+        "kind": "slots",
+        "rows": [
+          {
+            "label": "Before popleft",
+            "values": [
+              "first",
+              "second",
+              "third"
+            ],
+            "note": "Front is index 0; back is index 2.",
+            "active": [
+              0
+            ],
+            "muted": [],
+            "tags": {
+              "0": "front",
+              "2": "back"
+            }
+          },
+          {
+            "label": "After popleft",
+            "values": [
+              "removed",
+              "second",
+              "third"
+            ],
+            "note": "Logical queue is [second,third]. These stable positions illustrate identity, not deque internal storage.",
+            "active": [
+              1
+            ],
+            "muted": [
+              0
+            ],
+            "tags": {
+              "1": "new front"
+            }
+          }
+        ],
+        "note": "The deque’s physical representation is not specified by this illustration. The result is FIFO: first in, first out.",
+        "description": "Why does popleft return first while second and third remain? Before popleft: index 0 = first, index 1 = second, index 2 = third. Front is index 0; back is index 2.. After popleft: index 0 = removed, index 1 = second, index 2 = third. Logical queue is [second,third]. These stable positions illustrate identity, not deque internal storage.. The deque’s physical representation is not specified by this illustration. The result is FIFO: first in, first out."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "dsa-linked-list",
+      "title": "Follow links between nodes",
+      "url": "https://snowch.github.io/python-foundry/?lesson=dsa-linked-list",
+      "decision": "Revised",
+      "passage": "A singly linked list stores each value in a node with a reference to the next node. head refers to the first node; None ends the chain. Prepending allocates one node whose next reference is the old head. Prepending takes O(1) time, but reaching a value by position takes O(n) traversal rather than a list’s O(1) indexing. Nodes add per-item memory overhead. Python lists and deques are usually simpler choices; this model makes links explicit for later trees.",
+      "starter_sha256": "e200534ae266e7024e486c69271f0d4d8947f45c12b638622957bf9c682af7a1",
+      "question": "Which node is new, and which links remain?",
+      "design": {
+        "title": "Prepending reuses the old nodes",
+        "question": "Which node is new, and which links remain?",
+        "kind": "panels",
+        "panels": [
+          {
+            "label": "Before prepend",
+            "model": {
+              "kind": "graph",
+              "nodes": [
+                {
+                  "id": "h",
+                  "label": "head",
+                  "x": 12,
+                  "y": 50
+                },
+                {
+                  "id": "2",
+                  "label": "2",
+                  "x": 44,
+                  "y": 50
+                },
+                {
+                  "id": "3",
+                  "label": "3",
+                  "x": 76,
+                  "y": 50
+                }
+              ],
+              "edges": [
+                {
+                  "from": "h",
+                  "to": "2",
+                  "label": ""
+                },
+                {
+                  "from": "2",
+                  "to": "3",
+                  "label": "next"
+                }
+              ],
+              "legend": "Node 3.next is None.",
+              "height": 160
+            }
+          },
+          {
+            "label": "After prepend",
+            "model": {
+              "kind": "graph",
+              "nodes": [
+                {
+                  "id": "h",
+                  "label": "head",
+                  "x": 9,
+                  "y": 50
+                },
+                {
+                  "id": "1",
+                  "label": "1",
+                  "x": 34,
+                  "y": 50
+                },
+                {
+                  "id": "2",
+                  "label": "2",
+                  "x": 59,
+                  "y": 50
+                },
+                {
+                  "id": "3",
+                  "label": "3",
+                  "x": 84,
+                  "y": 50
+                }
+              ],
+              "edges": [
+                {
+                  "from": "h",
+                  "to": "1",
+                  "label": ""
+                },
+                {
+                  "from": "1",
+                  "to": "2",
+                  "label": "next"
+                },
+                {
+                  "from": "2",
+                  "to": "3",
+                  "label": "next"
+                }
+              ],
+              "legend": "Only node 1 is new. Nodes 2 and 3 retain their identity; the traversal prints 1,2,3.",
+              "height": 160
+            }
+          }
+        ],
+        "note": "Positions preserve logical node identity, not physical addresses or adjacency. next is a Python reference.",
+        "description": "Which node is new, and which links remain? Before prepend. Nodes: head, 2, 3. Connections: head leads to 2; 2 leads to 3 (next). Node 3.next is None.; After prepend. Nodes: head, 1, 2, 3. Connections: head leads to 1; 1 leads to 2 (next); 2 leads to 3 (next). Only node 1 is new. Nodes 2 and 3 retain their identity; the traversal prints 1,2,3.. Positions preserve logical node identity, not physical addresses or adjacency. next is a Python reference."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "dsa-hash-table",
+      "title": "Resolve a collision in a hash table",
+      "url": "https://snowch.github.io/python-foundry/?lesson=dsa-hash-table",
+      "decision": "Added",
+      "passage": "A hash table maps a key to a bucket, then compares keys within that bucket. This teaching implementation uses key % 4 for integer keys and a list of pairs per bucket. Keys 1 and 5 collide but remain separate records. With a well-distributed hash and controlled load, a lookup is expected O(1). A bucket containing every key gives O(n) worst-case lookup. The example exposes collision handling; Python’s dict has a different implementation and also resizes to control occupancy.",
+      "starter_sha256": "e8ef7feb11a8947eeeb318d3289c8e33d286d9badcc62171f79c3496ea3c21ee",
+      "question": "Why does updating key 1 leave key 5 in the same bucket?",
+      "design": {
+        "title": "A bucket can contain different keys",
+        "question": "Why does updating key 1 leave key 5 in the same bucket?",
+        "kind": "table",
+        "headings": [
+          "Operation",
+          "Bucket calculation",
+          "Bucket 1 afterward"
+        ],
+        "rows": [
+          [
+            "put(1,Ada)",
+            "1 % 4 = 1",
+            "[(1,Ada)]"
+          ],
+          [
+            "put(5,Lin)",
+            "5 % 4 = 1",
+            "[(1,Ada),(5,Lin)]"
+          ],
+          [
+            "put(1,Grace)",
+            "Compare actual key 1",
+            "[(1,Grace),(5,Lin)]"
+          ]
+        ],
+        "label": "",
+        "links": [],
+        "note": "The modulo hash selects a bucket, not a unique identity. Equality distinguishes colliding keys; the update replaces the matching key’s value.",
+        "description": "Why does updating key 1 leave key 5 in the same bucket? Operation; Bucket calculation; Bucket 1 afterward. put(1,Ada); 1 % 4 = 1; [(1,Ada)]; put(5,Lin); 5 % 4 = 1; [(1,Ada),(5,Lin)]; put(1,Grace); Compare actual key 1; [(1,Grace),(5,Lin)]. . . The modulo hash selects a bucket, not a unique identity. Equality distinguishes colliding keys; the update replaces the matching key’s value."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "dsa-heap",
+      "title": "Retrieve the smallest priority from a heap",
+      "url": "https://snowch.github.io/python-foundry/?lesson=dsa-heap",
+      "decision": "Added",
+      "passage": "A min-heap keeps the smallest item at index zero. Each parent is no greater than its children; the remaining array is not guaranteed to be sorted. heapq.heappush and heappop repair that invariant in O(log n) time. The tuple (priority, sequence, label) orders tasks first by priority and then arrival sequence. The explicit sequence gives equal-priority tasks a stable order without comparing their payloads. Building a heap with heapify takes O(n) time.",
+      "starter_sha256": "32673cfebbe7d9d8f7d957547aebe18f31ff1d82287fd67c3c351bace7e7c72d",
+      "question": "Which pending item has the lowest priority?",
+      "design": {
+        "title": "Parent order is not a fully sorted array",
+        "question": "Which pending item has the lowest priority?",
+        "kind": "graph",
+        "nodes": [
+          {
+            "id": "r",
+            "label": "recover",
+            "x": 50,
+            "y": 15,
+            "detail": "priority 0"
+          },
+          {
+            "id": "a",
+            "label": "read",
+            "x": 25,
+            "y": 50,
+            "detail": "priority 1"
+          },
+          {
+            "id": "b",
+            "label": "close",
+            "x": 78,
+            "y": 50,
+            "detail": "priority 2"
+          },
+          {
+            "id": "c",
+            "label": "write",
+            "x": 16,
+            "y": 85,
+            "detail": "priority 2"
+          }
+        ],
+        "edges": [
+          {
+            "from": "r",
+            "to": "a",
+            "label": "",
+            "directed": false
+          },
+          {
+            "from": "r",
+            "to": "b",
+            "label": "",
+            "directed": false
+          },
+          {
+            "from": "a",
+            "to": "c",
+            "label": "",
+            "directed": false
+          }
+        ],
+        "legend": "After the starter pushes recover: every parent tuple is ≤ its children. Pop order: recover, read, write, close.",
+        "height": 350,
+        "note": "Priority ties use the tuple’s sequence field: write has sequence 0, close has sequence 2. The heap array is not globally sorted; this is the actual small starter heap after the push.",
+        "description": "Which pending item has the lowest priority? Nodes: recover (priority 0), read (priority 1), close (priority 2), write (priority 2). Connections: recover connects to read; recover connects to close; read connects to write. After the starter pushes recover: every parent tuple is ≤ its children. Pop order: recover, read, write, close.. Priority ties use the tuple’s sequence field: write has sequence 0, close has sequence 2. The heap array is not globally sorted; this is the actual small starter heap after the push."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "dsa-bst",
+      "title": "Compare a search tree’s order with its height",
+      "url": "https://snowch.github.io/python-foundry/?lesson=dsa-bst",
+      "decision": "Added",
+      "passage": "A binary search tree places smaller keys in the left subtree and larger keys in the right. Searching or inserting follows one path, taking O(h) time where h is the tree’s height. Sorted insertion can make this unbalanced tree a chain of n nodes. Balanced insertion order can produce logarithmic height, but this implementation does not rebalance itself. In-order traversal visits left, node and right to recover sorted keys in either shape.",
+      "starter_sha256": "60c1bf297e3bd9d3a5d329cde51245164ca3ea10156689ec32980bfa6b51f192",
+      "question": "Why is in-order traversal [1,2,3] with height 2?",
+      "design": {
+        "title": "An ancestor bounds the whole subtree",
+        "question": "Why is in-order traversal [1,2,3] with height 2?",
+        "kind": "graph",
+        "nodes": [
+          {
+            "id": "2",
+            "label": "2",
+            "x": 50,
+            "y": 20
+          },
+          {
+            "id": "1",
+            "label": "1",
+            "x": 22,
+            "y": 80
+          },
+          {
+            "id": "3",
+            "label": "3",
+            "x": 78,
+            "y": 80
+          }
+        ],
+        "edges": [
+          {
+            "from": "2",
+            "to": "1",
+            "label": "< 2"
+          },
+          {
+            "from": "2",
+            "to": "3",
+            "label": "> 2"
+          }
+        ],
+        "legend": "Left → node → right visits 1,2,3. Height counts the two occupied node levels.",
+        "height": 300,
+        "note": "These are the keys inserted by the starter: 2,1,3. Sorted insertion can create a taller chain; ordering alone does not guarantee balance.",
+        "description": "Why is in-order traversal [1,2,3] with height 2? Nodes: 2, 1, 3. Connections: 2 leads to 1 (< 2); 2 leads to 3 (> 2). Left → node → right visits 1,2,3. Height counts the two occupied node levels.. These are the keys inserted by the starter: 2,1,3. Sorted insertion can create a taller chain; ordering alone does not guarantee balance."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "dsa-graph-model",
+      "title": "Represent vertices and edges explicitly",
+      "url": "https://snowch.github.io/python-foundry/?lesson=dsa-graph-model",
+      "decision": "Revised",
+      "passage": "A graph models vertices, such as places, connected by edges, such as routes. An adjacency list maps each vertex to its immediate neighbors. For an undirected edge, both endpoint lists include the other endpoint. The graph below is directed: A lists B and C, but B does not list A. A missing reverse edge therefore changes which routes can be followed. Storing adjacency lists takes O(V + E) space for V vertices and E directed entries.",
+      "starter_sha256": "cacdcc0c66e544d802c0691caf16e07f1bf79f2bddd04c7fa615574a7cb18d6f",
+      "question": "Why can D be reached from both B and C?",
+      "design": {
+        "title": "Two directed routes reach D",
+        "question": "Why can D be reached from both B and C?",
+        "kind": "graph",
+        "nodes": [
+          {
+            "id": "A",
+            "label": "A",
+            "x": 50,
+            "y": 15
+          },
+          {
+            "id": "B",
+            "label": "B",
+            "x": 20,
+            "y": 50
+          },
+          {
+            "id": "C",
+            "label": "C",
+            "x": 80,
+            "y": 50
+          },
+          {
+            "id": "D",
+            "label": "D",
+            "x": 50,
+            "y": 85
+          }
+        ],
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "label": ""
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "label": ""
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "label": ""
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "label": ""
+          }
+        ],
+        "legend": "A has neighbors B,C. B and C each point to D; D has no outgoing edges. Distance layers from A are 0: A, 1: B/C, 2: D.",
+        "height": 300,
+        "note": "Edges are directed in the starter. BFS records D on first discovery so the second route does not enqueue it again. The graph-model lesson only inspects the neighbors and four edges.",
+        "description": "Why can D be reached from both B and C? Nodes: A, B, C, D. Connections: A leads to B; A leads to C; B leads to D; C leads to D. A has neighbors B,C. B and C each point to D; D has no outgoing edges. Distance layers from A are 0: A, 1: B/C, 2: D.. Edges are directed in the starter. BFS records D on first discovery so the second route does not enqueue it again. The graph-model lesson only inspects the neighbors and four edges."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "dsa-bfs",
+      "title": "Find shortest unweighted paths with a queue",
+      "url": "https://snowch.github.io/python-foundry/?lesson=dsa-bfs",
+      "decision": "Revised",
+      "passage": "Breadth-first search, or BFS, explores vertices in increasing edge distance from a start. A deque processes the oldest discovery first. Set a neighbor’s distance when it is enqueued, so later edges cannot enqueue it again. For equal-cost edges, the first discovered distance is shortest. BFS takes O(V + E) time and O(V) auxiliary space. Weighted edges require a different algorithm; the distance here is a number of edges, not kilometers or travel time.",
+      "starter_sha256": "93ebb77e36571d19fe6623ebdccf3452cc690abccb98dd86b231abaf73b7cd42",
+      "question": "Why can D be reached from both B and C?",
+      "design": {
+        "title": "Two directed routes reach D",
+        "question": "Why can D be reached from both B and C?",
+        "kind": "graph",
+        "nodes": [
+          {
+            "id": "A",
+            "label": "A",
+            "x": 50,
+            "y": 15
+          },
+          {
+            "id": "B",
+            "label": "B",
+            "x": 20,
+            "y": 50
+          },
+          {
+            "id": "C",
+            "label": "C",
+            "x": 80,
+            "y": 50
+          },
+          {
+            "id": "D",
+            "label": "D",
+            "x": 50,
+            "y": 85
+          }
+        ],
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "label": ""
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "label": ""
+          },
+          {
+            "from": "B",
+            "to": "D",
+            "label": ""
+          },
+          {
+            "from": "C",
+            "to": "D",
+            "label": ""
+          }
+        ],
+        "legend": "A has neighbors B,C. B and C each point to D; D has no outgoing edges. Distance layers from A are 0: A, 1: B/C, 2: D.",
+        "height": 300,
+        "note": "Edges are directed in the starter. BFS records D on first discovery so the second route does not enqueue it again. The graph-model lesson only inspects the neighbors and four edges.",
+        "description": "Why can D be reached from both B and C? Nodes: A, B, C, D. Connections: A leads to B; A leads to C; B leads to D; C leads to D. A has neighbors B,C. B and C each point to D; D has no outgoing edges. Distance layers from A are 0: A, 1: B/C, 2: D.. Edges are directed in the starter. BFS records D on first discovery so the second route does not enqueue it again. The graph-model lesson only inspects the neighbors and four edges."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "dsa-dfs",
+      "title": "Explore a graph with an explicit stack",
+      "url": "https://snowch.github.io/python-foundry/?lesson=dsa-dfs",
+      "decision": "Keep prose / worked evidence",
+      "passage": "Depth-first search, or DFS, follows one pending branch before returning to alternatives. An explicit list stack replaces recursive function calls. A visited set prevents a cycle from repeatedly processing the same vertex. The reversed neighbor list makes the first listed neighbor the next one popped. Traversal order depends on that scheduling choice. DFS reachability takes O(V + E) time; it does not guarantee the shortest unweighted path that BFS supplies.",
+      "starter_sha256": "d497080c6b4e4049fd207eabada86e61270dec06d0eafc5c475a23b82eac8c8f",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "dsa-topological",
+      "title": "Schedule tasks only after their dependencies",
+      "url": "https://snowch.github.io/python-foundry/?lesson=dsa-topological",
+      "decision": "Added",
+      "passage": "A topological ordering puts each directed edge’s source before its destination. It exists only for a directed acyclic graph: a graph with no directed cycle. Indegree counts how many incoming dependencies each task still has. Start a queue with zero-indegree tasks. Removing a task decreases its neighbors’ indegrees; enqueue a neighbor when its count reaches zero. If fewer than V tasks are removed, a cycle blocks the remaining tasks. The algorithm takes O(V + E) time.",
+      "starter_sha256": "fc7432a194e1a48d8ae380309d7e2050ef8875070f7be197088db514455be3f9",
+      "question": "Why must transform wait for read, and write for transform?",
+      "design": {
+        "title": "A task becomes ready after its prerequisites",
+        "question": "Why must transform wait for read, and write for transform?",
+        "kind": "graph",
+        "nodes": [
+          {
+            "id": "r",
+            "label": "read",
+            "x": 16,
+            "y": 50
+          },
+          {
+            "id": "t",
+            "label": "transform",
+            "x": 50,
+            "y": 50
+          },
+          {
+            "id": "w",
+            "label": "write",
+            "x": 84,
+            "y": 50
+          }
+        ],
+        "edges": [
+          {
+            "from": "r",
+            "to": "t",
+            "label": "before"
+          },
+          {
+            "from": "t",
+            "to": "w",
+            "label": "before"
+          }
+        ],
+        "legend": "Initial indegrees: read=0, transform=1, write=1. Processing a predecessor decrements the next indegree.",
+        "height": 200,
+        "note": "A topological order exists only for a directed acyclic graph. If fewer tasks are emitted than graph vertices, the function reports cycle.",
+        "description": "Why must transform wait for read, and write for transform? Nodes: read, transform, write. Connections: read leads to transform (before); transform leads to write (before). Initial indegrees: read=0, transform=1, write=1. Processing a predecessor decrements the next indegree.. A topological order exists only for a directed acyclic graph. If fewer tasks are emitted than graph vertices, the function reports cycle."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "dsa-dijkstra",
+      "title": "Find minimum total weight with a priority queue",
+      "url": "https://snowch.github.io/python-foundry/?lesson=dsa-dijkstra",
+      "decision": "Added",
+      "passage": "Dijkstra’s algorithm chooses the smallest pending total distance from a min-heap. Relaxing an edge means replacing a neighbor’s distance when the new route has a smaller total weight. All edge weights must be nonnegative; reject negative weights before searching. A vertex may have older heap entries after an improvement, so skip an entry whose distance no longer matches the best known value. This heap-based implementation takes O((V + E) log V) time for a simple graph.",
+      "starter_sha256": "322d2f1151d5e0bed123c2b273614a523179b779f047389ab85c063c90cf1da2",
+      "question": "Why is the final distance to B equal to 3 rather than 5?",
+      "design": {
+        "title": "A cheaper indirect route can replace a direct route",
+        "question": "Why is the final distance to B equal to 3 rather than 5?",
+        "kind": "graph",
+        "nodes": [
+          {
+            "id": "A",
+            "label": "A",
+            "x": 18,
+            "y": 20
+          },
+          {
+            "id": "B",
+            "label": "B",
+            "x": 82,
+            "y": 20
+          },
+          {
+            "id": "C",
+            "label": "C",
+            "x": 50,
+            "y": 80
+          }
+        ],
+        "edges": [
+          {
+            "from": "A",
+            "to": "B",
+            "label": "5"
+          },
+          {
+            "from": "A",
+            "to": "C",
+            "label": "1"
+          },
+          {
+            "from": "C",
+            "to": "B",
+            "label": "2"
+          }
+        ],
+        "legend": "Direct A→B costs 5. A→C→B costs 1+2=3, so distance[B] changes 5→3.",
+        "height": 300,
+        "note": "All weights must be nonnegative. The priority queue chooses the smallest pending total distance; this picture is not a timing measurement.",
+        "description": "Why is the final distance to B equal to 3 rather than 5? Nodes: A, B, C. Connections: A leads to B (5); A leads to C (1); C leads to B (2). Direct A→B costs 5. A→C→B costs 1+2=3, so distance[B] changes 5→3.. All weights must be nonnegative. The priority queue chooses the smallest pending total distance; this picture is not a timing measurement."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "dsa-dynamic-programming",
+      "title": "Reuse smaller solutions in a dynamic program",
+      "url": "https://snowch.github.io/python-foundry/?lesson=dsa-dynamic-programming",
+      "decision": "Added",
+      "passage": "Dynamic programming stores answers to overlapping subproblems. For each amount, best[amount] is one plus the smallest already solved count for amount minus an available coin. best[0] = 0 is the base case. With coins [1, 3, 4], greedily taking 4 for amount 6 leaves two ones, while two threes use fewer coins. The table method checks all allowed final coins. Coins must be positive integers and target must be a nonnegative integer. For target A and C denominations, this implementation takes O(A × C) time and O(A) space.",
+      "starter_sha256": "68bae5e2344b5b50aefafff7e63edc6fc2682d7c800c4af87ba41f85557e1f5a",
+      "question": "Which final coin gives the fewest coins for amount 6?",
+      "design": {
+        "title": "Earlier amounts feed best[6]",
+        "question": "Which final coin gives the fewest coins for amount 6?",
+        "kind": "graph",
+        "nodes": [
+          {
+            "id": "5",
+            "label": "best[5]=2",
+            "x": 16,
+            "y": 18
+          },
+          {
+            "id": "3",
+            "label": "best[3]=1",
+            "x": 50,
+            "y": 18
+          },
+          {
+            "id": "2",
+            "label": "best[2]=2",
+            "x": 84,
+            "y": 18
+          },
+          {
+            "id": "6",
+            "label": "best[6]=2",
+            "x": 50,
+            "y": 85
+          }
+        ],
+        "edges": [
+          {
+            "from": "5",
+            "to": "6",
+            "label": "+1 coin → 3"
+          },
+          {
+            "from": "3",
+            "to": "6",
+            "label": "+3 coin → 2"
+          },
+          {
+            "from": "2",
+            "to": "6",
+            "label": "+4 coin → 3"
+          }
+        ],
+        "legend": "Candidate totals count coins, not currency value. Choose min(3,2,3)=2: use 3+3.",
+        "height": 320,
+        "note": "The starter’s coin values are [1,3,4], and best[0]=0. The ascending amount order makes each predecessor answer available before amount 6.",
+        "description": "Which final coin gives the fewest coins for amount 6? Nodes: best[5]=2, best[3]=1, best[2]=2, best[6]=2. Connections: best[5]=2 leads to best[6]=2 (+1 coin → 3); best[3]=1 leads to best[6]=2 (+3 coin → 2); best[2]=2 leads to best[6]=2 (+4 coin → 3). Candidate totals count coins, not currency value. Choose min(3,2,3)=2: use 3+3.. The starter’s coin values are [1,3,4], and best[0]=0. The ascending amount order makes each predecessor answer available before amount 6."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "tdb-schema",
+      "title": "TinyDB: define and validate a row",
+      "url": "https://snowch.github.io/python-foundry/?lesson=tdb-schema",
+      "decision": "Keep prose / worked evidence",
+      "passage": "TinyDB stores one table, people, with id, name and score fields. A schema defines which values are allowed: a unique integer id from 0 to 2147483647, a name occupying 1 to 32 UTF-8 bytes, and an integer score from 0 to 100. The supplied Row dataclass validates field types and bounds when constructed. Database insertion separately rejects duplicate ids. This engine is Python code, not a wrapper around SQLite or the third-party package named TinyDB. Every source tab is editable. The standalone examples start with fresh files; the final Saved TinyDB workspace explicitly retains database files between runs.",
+      "starter_sha256": "474db549ea9eae0a2e2abb109a570857cc50103a03f926e8bed52ac336e4c21f",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "tdb-statements",
+      "title": "TinyDB: parse a bounded statement language",
+      "url": "https://snowch.github.io/python-foundry/?lesson=tdb-statements",
+      "decision": "Keep prose / worked evidence",
+      "passage": "run_script accepts one complete statement per line. The supported SQL subset includes INSERT, SELECT by id or id range, UPDATE score, DELETE, BEGIN, COMMIT and ROLLBACK. Dot commands provide inspection; .help lists the exact grammar. This is a deliberately bounded language, not all of SQL. The parser converts the three INSERT fields into a validated Row, then calls the database operation. A statement error prints its line number and allows later statements to run. It does not cancel earlier successful commits or automatically roll back an active transaction.",
+      "starter_sha256": "0054f976ff35af7ef14fbc1783e6771249b5b20701efb16fc2c3038061a01574",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "tdb-codec",
+      "title": "TinyDB: encode rows and verify a checksum",
+      "url": "https://snowch.github.io/python-foundry/?lesson=tdb-codec",
+      "decision": "Retained",
+      "passage": "A snapshot contains a PYFDB1 format marker, generation number, sorted rows and SHA-256 checksum. canonical converts values to a deterministic UTF-8 JSON representation; unpack recomputes the checksum before accepting row values and ordering. The checksum detects accidental byte changes. It does not authenticate a file: someone able to replace both payload and checksum can create another valid snapshot. Keep row validation and format checks even when the checksum matches.",
+      "starter_sha256": "51031a85522fbad4444700fc696df015b797363b0fdf1288b2ffea85d6c8e2e9",
+      "question": "Which checks stand between bytes and accepted rows?",
+      "design": null,
+      "reason": "The existing diagram already supplies the relevant relationship; retain its caption and assumptions.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "tdb-index-search",
+      "title": "TinyDB: route a lookup through B+ separators",
+      "url": "https://snowch.github.io/python-foundry/?lesson=tdb-index-search",
+      "decision": "Revised",
+      "passage": "A B+ tree stores rows only in leaves. Branch keys are separators: each repeats the smallest key in its right subtree. bisect_right chooses the child for a lookup, so a key equal to a separator follows that right subtree. With at most three keys per node, a small example already has a branch and two leaves. get returns a Row or None. visits counts nodes inspected by the last lookup, not file reads; the index is in memory and is rebuilt when the database opens.",
+      "starter_sha256": "d78c7a89855dcf66eeb740b3c8588521946fb82061dd6ade4ddc5b3de0751f39",
+      "question": "Where does key 3 go when the separator is 3?",
+      "design": {
+        "title": "Equality follows the right-hand leaf",
+        "question": "Where does key 3 go when the separator is 3?",
+        "kind": "graph",
+        "nodes": [
+          {
+            "id": "root",
+            "label": "3",
+            "x": 50,
+            "y": 18
+          },
+          {
+            "id": "left",
+            "label": "[1,2]",
+            "x": 22,
+            "y": 80
+          },
+          {
+            "id": "right",
+            "label": "[3,4]",
+            "x": 78,
+            "y": 80
+          }
+        ],
+        "edges": [
+          {
+            "from": "root",
+            "to": "left",
+            "label": "< 3"
+          },
+          {
+            "from": "root",
+            "to": "right",
+            "label": "≥ 3"
+          }
+        ],
+        "legend": "Searching for 3 visits the root and the right leaf, then finds the row.",
+        "height": 300,
+        "note": "Separators repeat the first key of a right subtree. Rows remain in leaves. This is the starter’s small logical index, not a general disk-page layout.",
+        "description": "Where does key 3 go when the separator is 3? Nodes: 3, [1,2], [3,4]. Connections: 3 leads to [1,2] (< 3); 3 leads to [3,4] (≥ 3). Searching for 3 visits the root and the right leaf, then finds the row.. Separators repeat the first key of a right subtree. Rows remain in leaves. This is the starter’s small logical index, not a general disk-page layout."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "tdb-index-split",
+      "title": "TinyDB: split an overflowing leaf",
+      "url": "https://snowch.github.io/python-foundry/?lesson=tdb-index-split",
+      "decision": "Added",
+      "passage": "Inserting a fourth key overflows a three-key leaf. Split the four sorted rows into two leaves and copy the first right key into a parent separator. The separator remains in the right leaf because rows live in leaves, not branches. A split root creates a new level. A split child can overflow its parent, causing another split upward. check validates capacity, order, child ranges, equal leaf depth and the leaf chain. These are logical nodes, not fixed-size disk pages.",
+      "starter_sha256": "8d9923cfc1cddee23b5728a2fa97c22ae63f9083d365e03a9a544ca99f8b86d3",
+      "question": "Which insertion crosses the three-key leaf capacity?",
+      "design": {
+        "title": "The fourth key creates a new level",
+        "question": "Which insertion crosses the three-key leaf capacity?",
+        "kind": "panels",
+        "panels": [
+          {
+            "label": "Unchanged starter: keys 1..3",
+            "model": {
+              "kind": "slots",
+              "rows": [
+                {
+                  "label": "One leaf",
+                  "values": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "note": "rows=3, height=1, leaves=1.",
+                  "active": [],
+                  "muted": []
+                }
+              ]
+            }
+          },
+          {
+            "label": "After the instructed edit range(1,5)",
+            "model": {
+              "kind": "graph",
+              "nodes": [
+                {
+                  "id": "root",
+                  "label": "3",
+                  "x": 50,
+                  "y": 18
+                },
+                {
+                  "id": "left",
+                  "label": "[1,2]",
+                  "x": 22,
+                  "y": 80
+                },
+                {
+                  "id": "right",
+                  "label": "[3,4]",
+                  "x": 78,
+                  "y": 80
+                }
+              ],
+              "edges": [
+                {
+                  "from": "root",
+                  "to": "left",
+                  "label": "< 3"
+                },
+                {
+                  "from": "root",
+                  "to": "right",
+                  "label": "≥ 3"
+                }
+              ],
+              "legend": "rows=4, height=2, leaves=2. Separator 3 is copied into the parent and remains in the right leaf.",
+              "height": 300
+            }
+          }
+        ],
+        "note": "The second panel is the instructed edit, not the original three-insertion output. These are logical nodes, not fixed-size on-disk pages.",
+        "description": "Which insertion crosses the three-key leaf capacity? Unchanged starter: keys 1..3. One leaf: index 0 = 1, index 1 = 2, index 2 = 3. rows=3, height=1, leaves=1.; After the instructed edit range(1,5). Nodes: 3, [1,2], [3,4]. Connections: 3 leads to [1,2] (< 3); 3 leads to [3,4] (≥ 3). rows=4, height=2, leaves=2. Separator 3 is copied into the parent and remains in the right leaf.. The second panel is the instructed edit, not the original three-insertion output. These are logical nodes, not fixed-size on-disk pages."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "tdb-range",
+      "title": "TinyDB: continue a range scan across leaves",
+      "url": "https://snowch.github.io/python-foundry/?lesson=tdb-range",
+      "decision": "Added",
+      "passage": "A range scan first descends to the leaf containing the lower bound. It then follows next links across neighboring leaves until a key exceeds the upper bound. Both bounds are inclusive in between(low, high). The index locates the beginning in O(log n) time and visits the matching rows sequentially, giving O(log n + k) work for k results in a bounded-capacity tree. That describes index operations, not disk I/O or elapsed time.",
+      "starter_sha256": "874b5fec260c93c05b79998bb6ac93b35ab5fb380c610f2f8115fd748d088b37",
+      "question": "Why can between(2,5) continue without returning to the root?",
+      "design": {
+        "title": "Route once, then follow neighboring leaves",
+        "question": "Why can between(2,5) continue without returning to the root?",
+        "kind": "graph",
+        "nodes": [
+          {
+            "id": "root",
+            "label": "[3,5]",
+            "x": 50,
+            "y": 14
+          },
+          {
+            "id": "a",
+            "label": "[1,2]",
+            "x": 16,
+            "y": 68
+          },
+          {
+            "id": "b",
+            "label": "[3,4]",
+            "x": 50,
+            "y": 68
+          },
+          {
+            "id": "c",
+            "label": "[5,6]",
+            "x": 84,
+            "y": 68
+          }
+        ],
+        "edges": [
+          {
+            "from": "root",
+            "to": "a",
+            "label": "< 3"
+          },
+          {
+            "from": "root",
+            "to": "b",
+            "label": "3..4"
+          },
+          {
+            "from": "root",
+            "to": "c",
+            "label": "≥ 5"
+          },
+          {
+            "from": "a",
+            "to": "b",
+            "label": "next"
+          },
+          {
+            "from": "b",
+            "to": "c",
+            "label": "next"
+          }
+        ],
+        "legend": "Start in the first leaf at key 2; follow next links and emit 2,3,4,5. Stop at key 6.",
+        "height": 320,
+        "note": "Both bounds are inclusive in between. The displayed nodes follow insertion of keys 1 through 6 with leaf capacity 3. Root-routing edges and leaf-next edges have different labels.",
+        "description": "Why can between(2,5) continue without returning to the root? Nodes: [3,5], [1,2], [3,4], [5,6]. Connections: [3,5] leads to [1,2] (< 3); [3,5] leads to [3,4] (3..4); [3,5] leads to [5,6] (≥ 5); [1,2] leads to [3,4] (next); [3,4] leads to [5,6] (next). Start in the first leaf at key 2; follow next links and emit 2,3,4,5. Stop at key 6.. Both bounds are inclusive in between. The displayed nodes follow insertion of keys 1 through 6 with leaf capacity 3. Root-routing edges and leaf-next edges have different labels."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "tdb-snapshots",
+      "title": "TinyDB: reopen a checksummed snapshot",
+      "url": "https://snowch.github.io/python-foundry/?lesson=tdb-snapshots",
+      "decision": "Keep prose / worked evidence",
+      "passage": "Database.insert commits automatically when no transaction is active. A commit writes a new whole-file snapshot with a generation one greater than the previous generation. Reopening decodes the rows and rebuilds the B+ index. This teaching format favors a readable implementation: opening rebuilds the index, and updates and deletes rebuild it too. It is not an incremental disk-page engine. Each ordinary lesson run recreates its files; Generated files lets you download a snapshot before moving to the saved workspace.",
+      "starter_sha256": "55f09942c6c19fce66f1a32f85f25377e9aa5b0472274d564f8737a368ccaaab",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "tdb-transactions",
+      "title": "TinyDB: stage several changes before committing",
+      "url": "https://snowch.github.io/python-foundry/?lesson=tdb-transactions",
+      "decision": "Revised",
+      "passage": "BEGIN clones the committed row mapping into a staged candidate. Reads through that Database instance see staged changes. Another instance opened before COMMIT still sees the last saved snapshot. COMMIT publishes the candidate as one new generation; ROLLBACK discards it. The engine supports one active transaction per instance and the browser workspace runs statements sequentially. It does not implement concurrent database sessions or multi-process locking.",
+      "starter_sha256": "440d92e02dc61e87d82283f6e58488d91382acd495e0441b77b54227b5ca42a0",
+      "question": "Which score survives after reopening?",
+      "design": {
+        "title": "Staged score and saved score are separate",
+        "question": "Which score survives after reopening?",
+        "kind": "branch",
+        "root": "Committed score 42; staged UPDATE sets 73",
+        "paths": [
+          {
+            "when": "COMMIT · starter",
+            "result": "Saved score 73",
+            "detail": "Reopen observes the new committed snapshot."
+          },
+          {
+            "when": "ROLLBACK · edit variant",
+            "result": "Saved score 42",
+            "detail": "Discard the candidate; keep the previous snapshot."
+          }
+        ],
+        "note": "Rollback is a deliberate transaction decision. It is different from reopening after an interrupted commit.",
+        "description": "Which score survives after reopening? Committed score 42; staged UPDATE sets 73. COMMIT · starter. Saved score 73. Reopen observes the new committed snapshot.; ROLLBACK · edit variant. Saved score 42. Discard the candidate; keep the previous snapshot.. Rollback is a deliberate transaction decision. It is different from reopening after an interrupted commit."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "tdb-statement-errors",
+      "title": "TinyDB: retain a transaction after a statement error",
+      "url": "https://snowch.github.io/python-foundry/?lesson=tdb-statement-errors",
+      "decision": "Added",
+      "passage": "Each modifying statement applies to a separate candidate copy. A duplicate-id insert is rejected before the active transaction changes. Earlier successful statements in that transaction remain staged. run_script reports the failing line and continues. The learner must choose COMMIT or ROLLBACK. An unfinished transaction is rolled back when the script ends, so BEGIN and its final decision must appear in the same Run statements script.",
+      "starter_sha256": "39dde2da361076f0996a5fc2e487bde860c17ff8aa6a034095dd82ed1b20ff02",
+      "question": "Why can COMMIT still save Ada after the duplicate insert fails?",
+      "design": {
+        "title": "A rejected statement does not erase earlier staged work",
+        "question": "Why can COMMIT still save Ada after the duplicate insert fails?",
+        "kind": "table",
+        "headings": [
+          "Statement",
+          "Candidate result",
+          "Active transaction"
+        ],
+        "rows": [
+          [
+            "BEGIN",
+            "Start private transaction",
+            "empty"
+          ],
+          [
+            "INSERT ID 1/Ada/42",
+            "Valid candidate replaces staged state",
+            "Ada retained"
+          ],
+          [
+            "INSERT ID 1/Lin/75",
+            "Duplicate: discard this candidate",
+            "Ada still retained"
+          ],
+          [
+            "COMMIT",
+            "Publish staged Ada row",
+            "Ada visible to SELECT"
+          ]
+        ],
+        "label": "",
+        "links": [],
+        "note": "Statement failure and transaction rollback are separate decisions in this engine. The duplicate statement must not leak partial changes or silently undo an earlier successful statement.",
+        "description": "Why can COMMIT still save Ada after the duplicate insert fails? Statement; Candidate result; Active transaction. BEGIN; Start private transaction; empty; INSERT ID 1/Ada/42; Valid candidate replaces staged state; Ada retained; INSERT ID 1/Lin/75; Duplicate: discard this candidate; Ada still retained; COMMIT; Publish staged Ada row; Ada visible to SELECT. . . Statement failure and transaction rollback are separate decisions in this engine. The duplicate statement must not leak partial changes or silently undo an earlier successful statement."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "tdb-journal",
+      "title": "TinyDB: recover after a simulated interrupted commit",
+      "url": "https://snowch.github.io/python-foundry/?lesson=tdb-journal",
+      "decision": "Revised",
+      "passage": "A commit writes a prepared journal containing the complete next snapshot, then writes a committed marker, installs that snapshot and removes the journal. A prepared journal alone has not committed the change. Recovery discards it; a committed journal is replayed. The crash_at control deliberately interrupts one commit at a named boundary. The example reopens inside the same run to expose the recovery decision. In the saved workspace, .crash commit ends the script and the next Run statements reopens the saved main file and journal. This models protocol boundaries, not a physical power-loss guarantee.",
+      "starter_sha256": "c2673c77d2972b8f89a4489b083733a0b761cc2ad9cd8d0fe80aa140bbcb7c67",
+      "question": "At which stopping point does recovery choose the new generation?",
+      "design": {
+        "title": "A committed marker changes the recovery decision",
+        "question": "At which stopping point does recovery choose the new generation?",
+        "kind": "table",
+        "headings": [
+          "Interrupted phase",
+          "Journal decision",
+          "On reopen"
+        ],
+        "rows": [
+          [
+            "prepare",
+            "Candidate only; not committed",
+            "Discard candidate; retain old rows"
+          ],
+          [
+            "commit",
+            "Committed marker present",
+            "Replay candidate if necessary"
+          ],
+          [
+            "install",
+            "Committed data installed",
+            "Replay/check safely; remove journal"
+          ]
+        ],
+        "label": "Recovery boundaries",
+        "links": [],
+        "note": "Prepared and committed are distinct states in this teaching protocol. A recoverable committed decision is not proof of production flush ordering or physical-disk durability.",
+        "description": "At which stopping point does recovery choose the new generation? Interrupted phase; Journal decision; On reopen. prepare; Candidate only; not committed; Discard candidate; retain old rows; commit; Committed marker present; Replay candidate if necessary; install; Committed data installed; Replay/check safely; remove journal. Recovery boundaries. . Prepared and committed are distinct states in this teaching protocol. A recoverable committed decision is not proof of production flush ordering or physical-disk durability."
+      },
+      "reason": "Use the source-specific relationship/state model recorded below.",
+      "placement": "Beside the worked explanation/result; no extra navigation, execution or completion changes.",
+      "prose_replacement": "The diagram replaces a mental reconstruction of the quoted relationship. Keep definitions, preconditions and caveats; do not repeat a second step-by-step narration."
+    },
+    {
+      "id": "tdb-corruption",
+      "title": "TinyDB: reject corruption and restore a checked backup",
+      "url": "https://snowch.github.io/python-foundry/?lesson=tdb-corruption",
+      "decision": "Keep prose / worked evidence",
+      "passage": "A checksum failure stops opening the database; it must not silently create an empty replacement. A backup is a separate snapshot that can be verified before being used to replace damaged data. The example deliberately changes one score byte after making a backup. It catches the failure, explicitly restores the backup bytes and reopens. In the saved workspace, download a backup before experiments, and use Import database to validate and replace the current database deliberately.",
+      "starter_sha256": "55737da2a151f6b8e9fbbce56b6e52310049bc943d12f1a1c1eec7393d2bf5cd",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    },
+    {
+      "id": "tdb-workspace",
+      "title": "TinyDB: keep a database between runs",
+      "url": "https://snowch.github.io/python-foundry/?lesson=tdb-workspace",
+      "decision": "Keep prose / worked evidence",
+      "passage": "The source editor contains the complete engine in tinydb.py and a fresh demonstration in main.py. Run code executes that demonstration with temporary files. The Saved TinyDB workspace below uses tinydb.py from the source editor but runs its own Statements field against files kept in this browser. Run statements opens the saved files, executes one statement per line, then saves the whole returned file set in one browser storage transaction. A workspace revision counts browser saves; the database generation counts TinyDB commits. If another tab saved first, your candidate stays downloadable and cannot overwrite its newer files. Stop or a timeout keeps the previously saved files.",
+      "starter_sha256": "4a91bd858f8edcb7650facab2d2bcbad80ea8e1c49a75cf3fe060353545d5ea0",
+      "question": "",
+      "design": null,
+      "reason": "Keep the focused explanation and editable worked evidence. A separate model is not selected in this pass; the specific visual dependencies selected across this chapter are recorded on their own lessons.",
+      "placement": null,
+      "prose_replacement": null
+    }
+  ]
+}

@@ -1,9 +1,20 @@
+import {learningModels} from './learning-models.js';
+import {learningFigure} from './learning-model.js';
 const ns='http://www.w3.org/2000/svg';
 const node=(tag,attributes={},text)=>{const value=document.createElementNS(ns,tag);for(const[key,item]of Object.entries(attributes))value.setAttribute(key,item);if(text!==undefined)value.textContent=text;return value;};
 function box(svg,x,y,w,h,label){svg.append(node('rect',{x,y,width:w,height:h,rx:8,fill:'var(--light-blue)',stroke:'var(--line)'}),node('text',{x:x+w/2,y:y+h/2+6,'text-anchor':'middle',fill:'var(--ink)','font-size':18},label));}
 function arrow(svg,d){svg.append(node('path',{d,fill:'none',stroke:'var(--muted)','stroke-width':2,'marker-end':'url(#diagram-arrow)'}));}
 function card(text){const item=document.createElement('div');item.className='concept-card';item.textContent=text;return item;}
-export function renderConcept(figure,diagram){
+export function renderConcept(figure,diagram,id){
+ const model=learningModels[id];
+ figure.className='';figure.removeAttribute('data-model');figure.removeAttribute('aria-labelledby');
+ if(model){
+  const template=document.createElement('template');template.innerHTML=learningFigure(model,id);
+  const rendered=template.content.firstElementChild;
+  for(const attribute of rendered.attributes)figure.setAttribute(attribute.name,attribute.value);
+  figure.replaceChildren(...rendered.childNodes);figure.hidden=false;return;
+ }
+
  figure.hidden=!diagram;if(!diagram)return;figure.dataset.kind=diagram.kind;figure.replaceChildren();const caption=document.createElement('figcaption');caption.textContent=diagram.question;figure.append(caption);
  if(diagram.kind==='graph'||diagram.kind==='index'){
   const svg=node('svg',{viewBox:'0 0 450 275',role:'img','aria-label':diagram.question+' '+diagram.edges.map(([a,b])=>a+' leads to '+b).join('; ')}),positions=new Map(diagram.nodes.map(([name,x,y])=>[name,{x,y}])),defs=node('defs'),marker=node('marker',{id:'diagram-arrow',viewBox:'0 0 10 10',refX:8,refY:5,markerWidth:7,markerHeight:7,orient:'auto'});marker.append(node('path',{d:'M0 0 L10 5 L0 10 z',fill:'var(--muted)'}));defs.append(marker);svg.append(defs);
