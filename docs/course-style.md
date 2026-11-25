@@ -8,7 +8,7 @@ Lesson prose is readable at 17 pixels. CodeMirror provides Python syntax, line n
 
 Essential instructions and result interpretation remain visible. The independent practice editor has its own status, result and checks; it does not alter an example’s successful-execution status. Resource rows contain official Material SVGs and descriptive reference topics. Completion is reversible, and the navigation cards name the destination lessons. All assets needed for these components are part of the offline contract.
 
-The Foundry now uses the [focused lab-series hub](lab-series.md): numbered lab cards, scoped progress and stable lesson links.
+The Foundry uses [numbered parts containing chapters and lessons](lab-series.md), with scoped progress and stable lesson links.
 
 
 ## Foundry navigation
